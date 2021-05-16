@@ -1,0 +1,183 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background: #000;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1em;
+  width: 100%;
+}
+
+header {
+  background: #555;
+}
+
+header h1 {
+  font-size: 2em;
+  color: white;
+  line-height: 2em;
+  font-style: italic;
+}
+
+header ul {
+  margin-right: 0 auto;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+header li {
+  position: relative;
+  top: 0;
+  left: 50%;
+  margin: 25px 0 0 0;
+}
+
+header a {
+  text-align: center;
+  color: white;
+  margin-left: 15px;
+  padding: 10px;
+  text-decoration: none;
+}
+
+header a:hover {
+  text-decoration: none;
+  color: #888;
+}
+
+section {
+  background: #000;
+  padding-top: 30vh;
+  padding-bottom: 10vh;
+}
+
+section aside {
+  margin: 0 auto;
+  max-width: 300px;
+  background: white;
+  border-radius: 5px;
+}
+
+section aside table {
+  margin: 10px 0 0 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+section aside td, section aside th {
+  border: 1px solid #888;
+}
+
+section aside h2 {
+  padding: 15px 0 5px 0;
+  margin: 10px 0;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+section aside button {
+  position: relative;
+  top: 5px;
+  left: 17%;
+  margin: 0 0 20px 0;
+  border-radius: 5px;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.5)), to(rgba(255, 255, 255, 0.5)));
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.5));
+}
+
+section aside button:focus {
+  outline: none;
+}
+
+.card {
+  margin: 10px 5px;
+  background: #fff;
+  padding: 10px;
+  width: 250px;
+  -webkit-box-shadow: 0 3px 5px;
+          box-shadow: 0 3px 5px;
+}
+
+.card img {
+  width: 240px;
+  height: 160px;
+  -webkit-box-shadow: 0 2px 4px;
+          box-shadow: 0 2px 4px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.card p {
+  color: #888;
+  margin: 10px 0 0 0;
+  font-size: .8em;
+}
+
+.card h3 {
+  position: relative;
+  top: 0;
+  left: 20px;
+  margin: 5px 0 0 0;
+  font-size: 1.3em;
+}
+
+.card span {
+  font-size: .8em;
+}
+
+.card button {
+  border-radius: 5px;
+  margin: 15px 0 0 0;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.5)), to(rgba(255, 255, 255, 0.5)));
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.5));
+}
+
+.card button:focus {
+  outline: none;
+}
+
+footer {
+  background: #000;
+  padding-bottom: 10vh;
+}
+
+footer .container {
+  border-top: 1px solid rgba(100, 100, 100, 0.7);
+}
+
+footer ul {
+  margin-top: 10vh;
+  list-style: none;
+}
+
+footer li {
+  display: inline-block;
+}
+
+footer a {
+  padding: 10px;
+  margin-left: 15px;
+  color: #888;
+}
+
+footer a:hover {
+  text-decoration: none;
+  color: white;
+}
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,143 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: #000;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1em;
+    width: 100%;
+}
+header{
+    background: #555;
+    h1{
+        font-size: 2em;
+        color: white;
+        line-height: 2em;
+        font-style: italic;
+    }
+    ul{
+        margin-right: 0 auto;
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+
+    }
+    li{
+        position: relative;
+        top: 0;
+        left: 50%;
+        margin: 25px 0 0 0;
+    }
+    a{
+        text-align: center;
+        color: white;
+        margin-left: 15px;
+        padding: 10px;
+        text-decoration: none;
+    }
+    & a:hover{
+        text-decoration: none;
+        color: #888;
+    }
+}
+section{
+    background: #000;
+    padding-top: 30vh;
+    padding-bottom: 10vh;
+    aside{
+        margin: 0 auto;
+        max-width: 300px;
+        background:white;
+        border-radius: 5px;
+        table{
+            margin: 10px 0 0 0;
+            display: flex;
+            justify-content: center;
+            border-collapse: collapse;
+            text-align: center;
+        }
+        td, th{
+            border: 1px solid #888;
+        }
+        h2{
+            padding: 15px 0 5px 0;
+            margin: 10px 0;
+            text-align: center;
+            font-size: 1.2em;
+        }
+        button{
+            position: relative;
+            top: 5px;
+            left: 17%;
+            margin: 0 0 20px 0;
+            border-radius: 5px;
+            background: linear-gradient(to right, rgba(0, 0, 0, .5), rgba(255, 255, 255, .5))
+        }
+        & button:focus{
+            outline: none;
+        }
+    }
+}
+.card{
+    margin: 10px 5px;
+    background: #fff;
+    padding: 10px;
+    width: 250px;
+    box-shadow: 0 3px 5px;
+    img{
+        width: 240px;
+        height: 160px;
+        box-shadow: 0 2px 4px;
+        box-sizing: border-box;
+    }
+    p{
+        color: #888;
+        margin: 10px 0 0 0;
+        font-size: .8em;
+    }
+    h3{
+        position: relative;
+        top: 0;
+        left: 20px;
+        margin: 5px 0 0 0;
+        font-size: 1.3em;
+    }
+    span{
+        font-size: .8em;
+    }
+    button{
+        border-radius: 5px;
+        margin: 15px 0 0 0;
+        background: linear-gradient(to right, rgba(0, 0, 0, .5), rgba(255, 255, 255, .5))
+    }
+    & button:focus{
+        outline: none;
+    }
+}
+
+footer{
+    background: #000;
+    padding-bottom: 10vh;
+    .container{
+        border-top: 1px solid rgba(100, 100, 100, .7);
+    }
+    ul{
+        margin-top: 10vh;
+        list-style: none;
+    }
+    li{
+        display: inline-block;
+    }
+    a{
+        padding: 10px;
+        margin-left: 15px;
+        color: #888;
+    }
+    & a:hover{
+        text-decoration: none;
+        color: white;
+    }
+}
+ 
