@@ -48,7 +48,7 @@ section{
     padding-bottom: 10vh;
     aside{
         margin: 0 auto;
-        max-width: 300px;
+        max-width: 400px;
         background:white;
         border-radius: 5px;
         table{
@@ -70,10 +70,17 @@ section{
         button{
             position: relative;
             top: 5px;
-            left: 17%;
+            left: 5%;
+            padding: 7px 40px;
             margin: 0 0 20px 0;
+            border: none;
             border-radius: 5px;
-            background: linear-gradient(to right, rgba(0, 0, 0, .5), rgba(255, 255, 255, .5))
+            color: white;
+            background:rgba(0, 0, 0, .5);
+            transition: 0.2s;
+        }
+        & button:hover{
+            color: rgba(0, 0, 0, .7);
         }
         & button:focus{
             outline: none;
@@ -85,12 +92,16 @@ section{
     background: #fff;
     padding: 10px;
     width: 250px;
-    box-shadow: 0 3px 5px;
+    //box-shadow: 0 3px 5px;
+    
     img{
         width: 240px;
         height: 160px;
-        box-shadow: 0 2px 4px;
         box-sizing: border-box;
+        transition: 0.2s;
+    }
+    & img:hover {
+        box-shadow: 0 2px 4px;
     }
     p{
         color: #888;
@@ -110,10 +121,8 @@ section{
     button{
         border-radius: 5px;
         margin: 15px 0 0 0;
-        background: linear-gradient(to right, rgba(0, 0, 0, .5), rgba(255, 255, 255, .5))
-    }
-    & button:focus{
-        outline: none;
+        color: white;
+        background: rgba(0, 0, 0, .5);
     }
 }
 

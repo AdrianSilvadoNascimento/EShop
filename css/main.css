@@ -63,7 +63,7 @@ section {
 
 section aside {
   margin: 0 auto;
-  max-width: 300px;
+  max-width: 400px;
   background: white;
   border-radius: 5px;
 }
@@ -94,11 +94,19 @@ section aside h2 {
 section aside button {
   position: relative;
   top: 5px;
-  left: 17%;
+  left: 5%;
+  padding: 7px 40px;
   margin: 0 0 20px 0;
+  border: none;
   border-radius: 5px;
-  background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.5)), to(rgba(255, 255, 255, 0.5)));
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.5));
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+section aside button:hover {
+  color: rgba(0, 0, 0, 0.7);
 }
 
 section aside button:focus {
@@ -110,17 +118,20 @@ section aside button:focus {
   background: #fff;
   padding: 10px;
   width: 250px;
-  -webkit-box-shadow: 0 3px 5px;
-          box-shadow: 0 3px 5px;
 }
 
 .card img {
   width: 240px;
   height: 160px;
-  -webkit-box-shadow: 0 2px 4px;
-          box-shadow: 0 2px 4px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.card img:hover {
+  -webkit-box-shadow: 0 2px 4px;
+          box-shadow: 0 2px 4px;
 }
 
 .card p {
@@ -144,12 +155,8 @@ section aside button:focus {
 .card button {
   border-radius: 5px;
   margin: 15px 0 0 0;
-  background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.5)), to(rgba(255, 255, 255, 0.5)));
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.5));
-}
-
-.card button:focus {
-  outline: none;
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
 }
 
 footer {
