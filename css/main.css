@@ -61,18 +61,30 @@ section {
   padding-bottom: 10vh;
 }
 
+section #bg-produtos {
+  padding: 15px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 5px;
+  border: 1px solid #f1f1f1;
+  background: rgba(255, 255, 255, 0.6);
+}
+
 section aside {
-  margin: 0 auto;
+  margin: 15px 0;
   max-width: 400px;
   background: white;
   border-radius: 5px;
 }
 
 section aside table {
-  margin: 10px 0 0 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  margin: 10px 0 0 0 auto;
+  display: -ms-grid;
+  display: grid;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -92,13 +104,13 @@ section aside h2 {
 }
 
 section aside button {
-  position: relative;
-  top: 5px;
-  left: 5%;
+  /*position: relative;
+            top: 5px;
+            left: 5%;*/
+  display: block;
   padding: 7px 40px;
   margin: 0 0 20px 0;
   border: none;
-  border-radius: 5px;
   color: white;
   background: rgba(0, 0, 0, 0.5);
   -webkit-transition: 0.2s;
@@ -115,9 +127,12 @@ section aside button:focus {
 
 .card {
   margin: 10px 5px;
-  background: #fff;
+  background: #f5f5f5;
   padding: 10px;
   width: 250px;
+  border: 3px solid #333;
+  -webkit-box-shadow: 0 2px 10px;
+          box-shadow: 0 2px 10px;
 }
 
 .card img {
