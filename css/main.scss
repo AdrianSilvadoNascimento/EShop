@@ -42,6 +42,36 @@ header{
         color: #888;
     }
 }
+section#area-categorias{
+    background: #888;
+    height: 20vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    #linha-categorias{
+        display: flex;
+
+    }
+    .categorias{
+        padding: 20px;
+        background:rgba(255, 255, 255, .9);
+        margin: 3px 5px 0 5px;
+        width: 150px;
+        cursor: pointer;
+        text-align: center;
+        
+        img{
+            width: 140px;
+            border-radius: 70px;
+            transition: 0.2s;
+        }
+        h3{
+            padding-top: 15px;
+            font-size: 1.2em;
+            font-weight: 500;
+        }
+    }
+}
 section#area-produtos{
     background: #000;
     padding-top: 30vh;
@@ -161,23 +191,33 @@ footer{
 }
  //--------------------------   Contatos   -------------------------------------
 
- section#area-contatos{
-     height: 80vh;
-     background: #000;
-     margin: 0 auto;
+section#area-contatos{
+    height: 80vh;
+    background: #000;
+    margin: 0 auto;
 
-     h2{
-         padding-top: 10vh;
-         margin-bottom: 5vh;
-         color: white;
-         font-size: 1.2em;
-         font-weight: 500;
-         text-align: center;
-     }
-     input{
-         margin-top: 5px;
-     }
-     textarea{
-        margin-top: 20px;
-     }
- }
+    h2{
+        padding-top: 10vh;
+        margin-bottom: 5vh;
+        color: white;
+        font-size: 1.2em;
+        font-weight: 500;
+        text-align: center;
+    }
+    form{
+        display: grid;
+        place-items: center;
+    }
+    input{
+        width: 30vw;
+        margin-top: 5px;
+    }
+    input[type="submit"]{
+        width: 10%;
+    }
+    textarea{
+    width: 30vw;
+    margin-top: 20px;
+    resize: none;
+    }
+}

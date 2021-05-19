@@ -55,6 +55,48 @@ header a:hover {
   color: #888;
 }
 
+section#area-categorias {
+  background: #888;
+  height: 20vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+section#area-categorias #linha-categorias {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+section#area-categorias .categorias {
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  margin: 3px 5px 0 5px;
+  width: 150px;
+  cursor: pointer;
+  text-align: center;
+}
+
+section#area-categorias .categorias img {
+  width: 140px;
+  border-radius: 70px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+section#area-categorias .categorias h3 {
+  padding-top: 15px;
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
 section#area-produtos {
   background: #000;
   padding-top: 30vh;
@@ -218,11 +260,24 @@ section#area-contatos h2 {
   text-align: center;
 }
 
+section#area-contatos form {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
 section#area-contatos input {
+  width: 30vw;
   margin-top: 5px;
 }
 
+section#area-contatos input[type="submit"] {
+  width: 10%;
+}
+
 section#area-contatos textarea {
+  width: 30vw;
   margin-top: 20px;
+  resize: none;
 }
 /*# sourceMappingURL=main.css.map */

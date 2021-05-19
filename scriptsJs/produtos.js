@@ -6,9 +6,6 @@ const blusasVitrine = [
     {id: 4, nome: 'Livro-Azul', img: '../images/livro1.jpg', quantidade: 0, preco: 'R$21,99', estoque: '55'},
     {id: 5, nome: 'Livro-Rosa', img: '../images/livro2.jpg', quantidade: 0, preco: 'R$21,99', estoque: '65'},
 ]
-const livrosVitrine = [
-    {}
-]
 
 iniciarLoja = () => {
     let conteudoProdutos = document.getElementById('bg-produtos');
