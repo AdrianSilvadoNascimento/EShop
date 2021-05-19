@@ -43,7 +43,7 @@ atualizaCarrinho = ()=>{
             <tr>
                 <th>Produto</th>
                 <th>Qtd.</th>
-                <th>Valor Und.</th>
+                <th>Und.</th>
             </tr>
             <tr>
                 <td>`+ blusasVitrine[i].nome +`</td>

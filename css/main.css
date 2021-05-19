@@ -55,13 +55,13 @@ header a:hover {
   color: #888;
 }
 
-section {
+section#area-produtos {
   background: #000;
   padding-top: 30vh;
   padding-bottom: 10vh;
 }
 
-section #bg-produtos {
+section#area-produtos #bg-produtos {
   padding: 15px 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -71,17 +71,17 @@ section #bg-produtos {
           justify-content: center;
   border-radius: 5px;
   border: 1px solid #f1f1f1;
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.9);
 }
 
-section aside {
+section#area-produtos aside {
   margin: 15px 0;
   max-width: 400px;
   background: white;
   border-radius: 5px;
 }
 
-section aside table {
+section#area-produtos aside table {
   margin: 10px 0 0 0 auto;
   display: -ms-grid;
   display: grid;
@@ -92,18 +92,18 @@ section aside table {
   text-align: center;
 }
 
-section aside td, section aside th {
+section#area-produtos aside td, section#area-produtos aside th {
   border: 1px solid #888;
 }
 
-section aside h2 {
+section#area-produtos aside h2 {
   padding: 15px 0 5px 0;
   margin: 10px 0;
   text-align: center;
   font-size: 1.2em;
 }
 
-section aside button {
+section#area-produtos aside button {
   /*position: relative;
             top: 5px;
             left: 5%;*/
@@ -117,11 +117,11 @@ section aside button {
   transition: 0.2s;
 }
 
-section aside button:hover {
+section#area-produtos aside button:hover {
   color: rgba(0, 0, 0, 0.7);
 }
 
-section aside button:focus {
+section#area-produtos aside button:focus {
   outline: none;
 }
 
@@ -201,5 +201,28 @@ footer a {
 footer a:hover {
   text-decoration: none;
   color: white;
+}
+
+section#area-contatos {
+  height: 80vh;
+  background: #000;
+  margin: 0 auto;
+}
+
+section#area-contatos h2 {
+  padding-top: 10vh;
+  margin-bottom: 5vh;
+  color: white;
+  font-size: 1.2em;
+  font-weight: 500;
+  text-align: center;
+}
+
+section#area-contatos input {
+  margin-top: 5px;
+}
+
+section#area-contatos textarea {
+  margin-top: 20px;
 }
 /*# sourceMappingURL=main.css.map */
