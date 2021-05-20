@@ -42,7 +42,7 @@
             </div>            
         </header> <!-- Final Cabecalho-->
 
-        <section id="area-categorias" class="sticky-top">
+        <section id="area-categorias" class="sticky-top"> <!-- Categorias de Produtos -->
             <div class="container">
                 <div id="linha-categorias">
                     <!--<div class="categorias">
@@ -75,7 +75,7 @@
                     </a>
                 </div>
             </div>
-        </section>
+        </section> <!-- Fim Seção de Categorias Produtos -->
 
         <section id="area-produtos"> <!-- Começo Produtos -->
             <div class="row container m-auto">
@@ -108,9 +108,24 @@
                 </div> <!-- Final tabela lateral -->
             </div>
         </section> <!-- Final Produtos -->
+
+        <section id="area-cadastrar">
+            <div class="container">
+                <form>
+                    <input class="form-control" id="idProduto" type="number" name="idProduto" placeholder="idProduto" required>
+                    <input class="form-control" id="nomeProduto" type="text" name="nomeProduto" placeholder="nomeProduto" required>
+                    <input class="form-control" id="caminhoFotoProduto" type="text" name="caminhoFoto" placeholder="caminhoFoto" required>
+                    <input class="form-control" id="quantidadeProduto" type="number" name="quantidade" placeholder="quantidade" required>
+                    <input class="form-control" id="categoriaProduto" type="text" name="categoria" placeholder="categoria" required>
+                    <input class="form-control" id="precoProduto" type="text" name="preco" placeholder="preco" required>
+                    <input class="form-control" id="estoqueProduto" type="number" name="estoque" placeholder="estoque" required>
+                </form>
+                <button class="btn btn-dark" onclick="cadastrarProduto()">Cadastrar</button>
+            </div>            
+        </section>
         <footer>
             <div class="container">
-                <div class="m-auto">
+                <div>
                     <ul>
                         <li>
                             <a href="#">Home</a>

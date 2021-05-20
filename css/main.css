@@ -13,7 +13,7 @@ body {
   font-family: 'Times New Roman', Times, serif;
   font-size: 1em;
   width: 100%;
-  background: #000;
+  background: #222;
 }
 
 header {
@@ -91,7 +91,7 @@ section#area-categorias .categorias img {
 }
 
 section#area-produtos {
-  background: #000;
+  background: #222;
   padding-top: 30vh;
   padding-bottom: 10vh;
 }
@@ -209,8 +209,19 @@ section#area-produtos aside button:focus {
   background: rgba(0, 0, 0, 0.5);
 }
 
+section#area-cadastrar {
+  padding-bottom: 10vh;
+  background: #222;
+}
+
+section#area-cadastrar input {
+  width: 300px;
+  margin: 10px 0;
+  display: inline-block;
+}
+
 footer {
-  background: #000;
+  background: #222;
   padding-bottom: 10vh;
 }
 
@@ -240,7 +251,7 @@ footer a:hover {
 
 section#area-contatos {
   height: 80vh;
-  background: #000;
+  background: #222;
   margin: 0 auto;
 }
 

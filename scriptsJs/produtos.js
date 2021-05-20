@@ -66,3 +66,34 @@ for(i=0; i < buttons.length; i++){
         atualizaCarrinho();
     })
 }
+
+function cadastrarProduto(){
+    let id = parseInt(document.getElementById('idProduto').value);
+    let nome = document.getElementById('nomeProduto').value;
+    let img = document.getElementById('caminhoFotoProduto').value;
+    let quantidade = parseInt(document.getElementById('quantidadeProduto').value);
+    let categoria = document.getElementById('categoriaProduto').value;
+    let preco = document.getElementById('precoProduto').value;
+    let estoque = parseInt(document.getElementById('estoqueProduto').value);
+
+    blusasVitrine.push({id, nome, img, quantidade, categoria, preco, estoque});
+
+    let conteudoProdutos = document.getElementById('bg-produtos');
+    conteudoProdutos.innerHTML = '';
+    for(i=0; i < blusasVitrine.length; i++){
+        conteudoProdutos.innerHTML += `
+        <div class="card" id="` + blusasVitrine[i].categoria + `">
+            <img src="`+ blusasVitrine[i].img +`" class="img-fluid" alt="camisa">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>Qtd. ` + blusasVitrine[i].estoque + `</p>
+                </div>
+                <div class="col-md-6">
+                    <h3>`+ blusasVitrine[i].preco +`</h3>
+                </div>
+            </div>                     
+            <button key="` + blusasVitrine[i].id + `" class="btn">Adicionar ao Carrinho</button>
+        </div>        
+        `;
+    }
+}
