@@ -3,11 +3,14 @@
     padding: 0;
     box-sizing: border-box;
 }
+html{
+    scroll-behavior: smooth;
+}
 body{
-    background: #000;
     font-family: 'Times New Roman', Times, serif;
     font-size: 1em;
     width: 100%;
+    background: #000;
 }
 header{
     background: #555;
@@ -44,22 +47,21 @@ header{
 }
 section#area-categorias{
     background: #888;
-    height: 20vh;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
     #linha-categorias{
         display: flex;
-
+        justify-content: space-between;
     }
     .categorias{
         padding: 20px;
         background:rgba(255, 255, 255, .9);
-        margin: 3px 5px 0 5px;
+        margin: 0 5px 0 5px;
         width: 150px;
         cursor: pointer;
         text-align: center;
-        
+        text-decoration: none;
+        color:rgba(0, 0, 0, .7);
+        font-size: 1.2em;
+
         img{
             width: 140px;
             border-radius: 70px;
