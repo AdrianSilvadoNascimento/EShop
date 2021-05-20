@@ -85,16 +85,10 @@ section#area-categorias .categorias {
 }
 
 section#area-categorias .categorias img {
-  width: 140px;
-  border-radius: 70px;
+  width: 100%;
+  border-radius: 50%;
   -webkit-transition: 0.2s;
   transition: 0.2s;
-}
-
-section#area-categorias .categorias h3 {
-  padding-top: 15px;
-  font-size: 1.2em;
-  font-weight: 500;
 }
 
 section#area-produtos {
