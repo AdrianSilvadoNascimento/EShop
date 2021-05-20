@@ -46,20 +46,20 @@ header{
     }
 }
 section#area-categorias{
-    background: #888;
+    background:rgba(100, 100, 100, .7);
     #linha-categorias{
         display: flex;
         justify-content: space-between;
     }
     .categorias{
         padding: 20px;
-        background:rgba(255, 255, 255, .9);
+        //background:rgba(255, 255, 255, .9);
         margin: 0 5px 0 5px;
         width: 150px;
         cursor: pointer;
         text-align: center;
         text-decoration: none;
-        color:rgba(0, 0, 0, .7);
+        color:rgb(255, 255, 255,);
         font-size: 1.2em;
 
         img{
