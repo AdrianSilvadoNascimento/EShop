@@ -11,7 +11,7 @@ Venho trazendo atualizações conforme passam os dias. Se quiserem acompanhar e 
 </p>
 
 <p align="center">
-  <img src="images/imagesParaReadme/vitrineLivrosHome-Page.png" width="600">
+  <img src="images/imagesParaReadme/VitrineLivrosHome-Page.png" width="600">
 </p>
 
 <p align="center">
