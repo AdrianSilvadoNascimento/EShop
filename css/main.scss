@@ -14,24 +14,22 @@ body{
 }
 header{
     background: #555;
-    h1{
+    #logo{
+        position: relative;
+        top: 12px;
         font-size: 2em;
         color: white;
-        line-height: 2em;
         font-style: italic;
+        display: flex;
     }
     ul{
-        margin-right: 0 auto;
         list-style: none;
         display: flex;
-        flex-direction: row;
-
+        justify-content: flex-end;
     }
     li{
-        position: relative;
-        top: 0;
-        left: 50%;
-        margin: 25px 0 0 0;
+       position: relative;
+       top: -20px;
     }
     a{
         text-align: center;
@@ -102,6 +100,8 @@ section#area-produtos{
         max-width: 400px;
         background:white;
         border-radius: 5px;
+        display: flex;
+        justify-content: center;
         table{
             margin: 10px 0 0 0 auto;
             display: grid;
@@ -186,6 +186,11 @@ section#area-cadastrar{
         margin: 10px 0;
         display: inline-block;
     }
+    select{
+        width: 300px;
+        margin: 10px 0;
+        display: inline-block;
+    }
 }
 
 footer{
@@ -242,4 +247,26 @@ section#area-contatos{
     margin-top: 20px;
     resize: none;
     }
+}
+
+//--------------------------   Media Responsiva   -------------------------------------
+@media screen and (max-width: 480px) {
+    #logo{
+        justify-content: center;
+    }
+}
+@media screen and (max-width:767px){
+    header{
+        #logo{
+            justify-content: center;
+        }
+        ul{
+            justify-content: center;
+        }
+        li{
+            top: 0;
+            margin: 10px 0;
+        }
+    }
+    
 }

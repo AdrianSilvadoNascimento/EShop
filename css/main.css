@@ -20,30 +20,30 @@ header {
   background: #555;
 }
 
-header h1 {
+header #logo {
+  position: relative;
+  top: 12px;
   font-size: 2em;
   color: white;
-  line-height: 2em;
   font-style: italic;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 header ul {
-  margin-right: 0 auto;
   list-style: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 header li {
   position: relative;
-  top: 0;
-  left: 50%;
-  margin: 25px 0 0 0;
+  top: -20px;
 }
 
 header a {
@@ -143,6 +143,12 @@ section#area-produtos aside {
   max-width: 400px;
   background: white;
   border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 section#area-produtos aside table {
@@ -249,6 +255,12 @@ section#area-cadastrar input {
   display: inline-block;
 }
 
+section#area-cadastrar select {
+  width: 300px;
+  margin: 10px 0;
+  display: inline-block;
+}
+
 footer {
   background: #222;
   padding-bottom: 10vh;
@@ -312,5 +324,30 @@ section#area-contatos textarea {
   width: 30vw;
   margin-top: 20px;
   resize: none;
+}
+
+@media screen and (max-width: 480px) {
+  #logo {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  header #logo {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  header ul {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  header li {
+    top: 0;
+    margin: 10px 0;
+  }
 }
 /*# sourceMappingURL=main.css.map */
