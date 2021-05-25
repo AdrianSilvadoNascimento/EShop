@@ -22,26 +22,64 @@ header{
         font-style: italic;
         display: flex;
     }
-    ul{
+    #search{
+        border-radius: 0;
+    }
+    #menuDrop{
+        display: none;
+        background: transparent;
+        width: 50px;
+        height: 50px;
+        background-size: contain;
+        border: none;
+        color: #888;
+    }
+    /*.menu:focus, #menuDrop:focus{
+        outline: white;
+    }*/
+    ul#menuSmall{
+        position: relative;
+        top: -20px;
+        list-style: none;
+        display: none; //display: none
+        background:#999;
+        width: 120px;
+        li{
+            text-align: center;
+        }
+        a{
+            display: block;
+            color: white;
+            padding: 10px 0;
+        }
+        & a:hover{
+            background: #333;
+            color: #999;
+            text-decoration: none;
+
+        }
+    }
+    ul#menuCommon{
         list-style: none;
         display: flex;
         justify-content: flex-end;
+         a{
+             text-align: center;
+             color: white;
+             margin-left: 15px;
+             padding: 10px;
+             text-decoration: none;
+         }
+         & a:hover{
+             text-decoration: none;
+             color: #888;
+         }
     }
-    li{
-       position: relative;
-       top: -20px;
+    .btn{
+        color: rgba(255, 255, 255, 0.9);
+        background: #777;
     }
-    a{
-        text-align: center;
-        color: white;
-        margin-left: 15px;
-        padding: 10px;
-        text-decoration: none;
-    }
-    & a:hover{
-        text-decoration: none;
-        color: #888;
-    }
+    
 }
 section#area-categorias{
     background:rgba(100, 100, 100, .7);
@@ -61,7 +99,7 @@ section#area-categorias{
         cursor: pointer;
         text-align: center;
         text-decoration: none;
-        color:rgb(255, 255, 255,);
+        color:rgb(255, 255, 255);
         font-size: 1.2em;
 
         img{
@@ -254,18 +292,23 @@ section#area-contatos{
     #logo{
         justify-content: center;
     }
+    #menuDrop{
+        display: block;
+    }
 }
 @media screen and (max-width:767px){
     header{
         #logo{
             justify-content: center;
         }
-        ul{
-            justify-content: center;
+        ul#menuCommon{
+            display: none;
         }
         li{
-            top: 0;
-            margin: 10px 0;
+            margin-top: 25px;
+        }
+        #menuDrop{
+            display: block;
         }
     }
     

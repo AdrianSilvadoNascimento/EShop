@@ -18,6 +18,9 @@ body {
 
 header {
   background: #555;
+  /*.menu:focus, #menuDrop:focus{
+        outline: white;
+    }*/
 }
 
 header #logo {
@@ -31,7 +34,46 @@ header #logo {
   display: flex;
 }
 
-header ul {
+header #search {
+  border-radius: 0;
+}
+
+header #menuDrop {
+  display: none;
+  background: transparent;
+  width: 50px;
+  height: 50px;
+  background-size: contain;
+  border: none;
+  color: #888;
+}
+
+header ul#menuSmall {
+  position: relative;
+  top: -20px;
+  list-style: none;
+  display: none;
+  background: #999;
+  width: 120px;
+}
+
+header ul#menuSmall li {
+  text-align: center;
+}
+
+header ul#menuSmall a {
+  display: block;
+  color: white;
+  padding: 10px 0;
+}
+
+header ul#menuSmall a:hover {
+  background: #333;
+  color: #999;
+  text-decoration: none;
+}
+
+header ul#menuCommon {
   list-style: none;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -41,12 +83,7 @@ header ul {
           justify-content: flex-end;
 }
 
-header li {
-  position: relative;
-  top: -20px;
-}
-
-header a {
+header ul#menuCommon a {
   text-align: center;
   color: white;
   margin-left: 15px;
@@ -54,9 +91,14 @@ header a {
   text-decoration: none;
 }
 
-header a:hover {
+header ul#menuCommon a:hover {
   text-decoration: none;
   color: #888;
+}
+
+header .btn {
+  color: rgba(255, 255, 255, 0.9);
+  background: #777;
 }
 
 section#area-categorias {
@@ -332,6 +374,9 @@ section#area-contatos textarea {
         -ms-flex-pack: center;
             justify-content: center;
   }
+  #menuDrop {
+    display: block;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -340,14 +385,14 @@ section#area-contatos textarea {
         -ms-flex-pack: center;
             justify-content: center;
   }
-  header ul {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+  header ul#menuCommon {
+    display: none;
   }
   header li {
-    top: 0;
-    margin: 10px 0;
+    margin-top: 25px;
+  }
+  header #menuDrop {
+    display: block;
   }
 }
 /*# sourceMappingURL=main.css.map */
