@@ -17,3 +17,5 @@ Venho trazendo atualizações conforme passam os dias. Se quiserem acompanhar e 
 <p align="center">
   <img src="images/imagesParaReadme/rodape-Home-Page.png" width="600">
 </p>
+<p>Novas atualizações foram feitas, em breve novas screen shots das atualizações.</p>
+
