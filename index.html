@@ -1,4 +1,5 @@
 <!doctype html>
+<html ng-app="lojaVirtual">
 <html lang="en">
 <head>
     <title>Loja Virtual</title>
@@ -6,6 +7,16 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!--AngularJS-->
+    <script src="app/angular/angular.js"></script>
+    <script src="app/angular/angular-messages.min.js"></script>
+    <script src="app/app.js"></script>
+    <script>
+        angular.module("lojaVirtual").controller("lojaVirtualCtrl", function($scope){
+            $scope.logo="Loja Virtual"
+        });
+    </script>
 
     <!-- Estilo SCSS -->
     <link rel="stylesheet" href="css/main.css">
@@ -16,9 +27,9 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
-    <body>
+    <body ng-controller="lojaVirtualCtrl">
         <header class="container-fluid"> <!-- Começo Cabecalho -->
-            <h1 id="logo">Logo Marca</h1>
+            <h1 id="logo">{{logo}}</h1>
             <!--Menu Normal-->
             <ul id="menuCommon">
                 <li>
@@ -50,8 +61,10 @@
             </div>
             <!--Area da sacola-login-cadastrar-->
             <div id="areaSacola">
-                <a href="#" class="">login</a>
-                <a href="#" class="btn btn-sm btn-light">Cadastre-se</a>
+                <a href="#" class="">login/
+                    <a href="#" class="">\Cadastre-se</a><!--btn btn-sm btn-light-->
+                </a>
+                
                 <i id="sacola" class="fas fa-shopping-bag fa-2x"></i>
                 <span id="quantidadeSacola">0</span>
             </div>
@@ -144,11 +157,11 @@
             <div class="row container-fluid m-auto">
                 <!--<div class="col-md-9">-->
                     <div class="produtos"> <!--class="container"-->
-                        <h2 class="vitrineTag">Vitrine De Blusas</h2>
+                        <h3 class="vitrineTag">Vitrine De Blusas</h3>
                         <div id="bg-produtos-blusas" class="row">
                             
                         </div>
-                        <h2 class="vitrineTag">Vitrine De Livros</h2>
+                        <h3 class="vitrineTag">Vitrine De Livros</h3>
                         <div id="bg-produtos-livros" class="row">
 
                         </div>

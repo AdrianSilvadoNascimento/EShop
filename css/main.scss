@@ -16,7 +16,7 @@ header{
     background: #555;
     #logo{
         position: relative;
-        top: 30px;
+        top: 12px;
         font-size: 2em;
         color: white;
         font-style: italic;
@@ -86,8 +86,10 @@ header{
         justify-content: flex-end;
         margin-right: 100px;
         margin-bottom: 10px;
+        
         #sacola{
             background-size: contain;
+            cursor: pointer;
         }
         a{
             padding: 10px;

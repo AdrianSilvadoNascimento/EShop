@@ -25,7 +25,7 @@ header {
 
 header #logo {
   position: relative;
-  top: 30px;
+  top: 12px;
   font-size: 2em;
   color: white;
   font-style: italic;
@@ -115,6 +115,7 @@ header #areaSacola {
 
 header #areaSacola #sacola {
   background-size: contain;
+  cursor: pointer;
 }
 
 header #areaSacola a {
