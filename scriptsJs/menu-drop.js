@@ -1,9 +1,9 @@
-let buttonDrop = document.getElementById('menuSmall');
-buttonDrop.style.display = 'none';
+let buttonDrop = document.getElementById('menuSmall').style;
 
 function abrirMenuDrop(){
-    buttonDrop.style.display = 'block';
+    buttonDrop.display = 'block';
+    
 }
 function fecharMenuDrop(){
-    buttonDrop.style.display = 'none';
+    buttonDrop.display = 'none';
 }

@@ -25,7 +25,7 @@ header {
 
 header #logo {
   position: relative;
-  top: 12px;
+  top: 30px;
   font-size: 2em;
   color: white;
   font-style: italic;
@@ -50,7 +50,8 @@ header #menuDrop {
 
 header ul#menuSmall {
   position: relative;
-  top: -20px;
+  top: -22px;
+  margin-bottom: 0;
   list-style: none;
   display: none;
   background: #999;
@@ -101,6 +102,46 @@ header .btn {
   background: #777;
 }
 
+header #areaSacola {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-right: 100px;
+  margin-bottom: 10px;
+}
+
+header #areaSacola #sacola {
+  background-size: contain;
+}
+
+header #areaSacola a {
+  padding: 10px;
+  margin-right: 20px;
+  text-decoration: none;
+  color: white;
+}
+
+header #areaSacola a:hover {
+  color: #888;
+}
+
+header #areaSacola span {
+  position: relative;
+  top: 15px;
+  right: 21.5px;
+  width: 15px;
+  height: 15px;
+  text-align: center;
+  color: white;
+  font-size: 9px;
+  line-height: 15px;
+  background-color: #a02e2e;
+  border-radius: 50%;
+}
+
 section#area-categorias {
   background: rgba(100, 100, 100, 0.7);
 }
@@ -144,7 +185,7 @@ section#area-categorias .categorias img {
 
 section#area-produtos {
   background: #222;
-  padding-top: 20vh;
+  padding-top: 10vh;
   padding-bottom: 10vh;
 }
 
@@ -377,6 +418,9 @@ section#area-contatos textarea {
   #menuDrop {
     display: block;
   }
+  #areaSacola {
+    margin-right: 10px;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -393,6 +437,9 @@ section#area-contatos textarea {
   }
   header #menuDrop {
     display: block;
+  }
+  header #areaSacola {
+    margin-right: 10px;
   }
 }
 /*# sourceMappingURL=main.css.map */
