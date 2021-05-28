@@ -62,7 +62,7 @@
                 </a>
                 <a href="">
                     <i id="sacola" class="fas fa-shopping-bag fa-2x"></i>
-                    <p id="quantidadeSacola">{{adicionarQuantidade}}</p>
+                    <p id="quantidadeSacola" ng-bind="blusa.quantidade"></p>
                 </a>
                 
                 
@@ -166,9 +166,9 @@
                         </div>-->
                         <h3 class="vitrineTag">Vitrine De Blusas</h3>
                         <div id="bg-produtos-blusas" class="row">
-                            <div ng-repeat="blusa in blusas | filter: search">
+                            <div ng-repeat="blusa in blusas | orderBy: 'nome' | filter: search">
                                 <div class="card" id="{{blusa.nome}}">
-                                    <img src="{{blusa.img}}" class="img-fluid" alt="camisa">
+                                    <img src="{{blusa.img}}" class="img-fluid" alt="{{blusa.nome}}">
                                     <div class="row">
                                         <div class="col-md-6">
                                             <p>Qtd.{{blusa.estoque}}</p>
@@ -211,20 +211,21 @@
         <section id="area-cadastrar">
             <div class="container">
                 <form>
-                    <input class="form-control" id="idProduto" type="number" name="idProduto" placeholder="idProduto" required>
-                    <input class="form-control" id="nomeProduto" type="text" name="nomeProduto" placeholder="nomeProduto" required>
-                    <input class="form-control" id="caminhoFotoProduto" type="text" name="caminhoFoto" placeholder="caminhoFoto" required>
-                    <input class="form-control" id="quantidadeProduto" type="number" name="quantidade" placeholder="quantidade" required>
-                    <input class="form-control" id="categoriaProduto" type="text" name="categoria" placeholder="categoria" required>
-                    <input class="form-control" id="precoProduto" type="text" name="preco" placeholder="preco" required>
-                    <input class="form-control" id="estoqueProduto" type="number" name="estoque" placeholder="estoque" required>
-                    <select class="form-control" id="tipoProduto" name="categoriaProduto" required>
+                    <input class="form-control" id="idProduto" type="number" name="idProduto" placeholder="idProduto" required ng-model="blusa.id">
+                    <input class="form-control" id="nomeProduto" type="text" name="nomeProduto" placeholder="nomeProduto" required ng-model="blusa.nome">
+                    <input class="form-control" id="caminhoFotoProduto" type="text" name="caminhoFoto" placeholder="caminhoFoto" required ng-model="blusa.foto">
+                    <input class="form-control" id="quantidadeProduto" type="number" name="quantidade" placeholder="quantidade" required ng-model="blusa.quantidade">
+                    <!--<input class="form-control" id="categoriaProduto" type="text" name="categoria" placeholder="categoria" required ng-model="categoria">-->
+                    <input class="form-control" id="precoProduto" type="text" name="preco" placeholder="preco" required ng-model="blusa.preco">
+                    <input class="form-control" id="estoqueProduto" type="number" name="estoque" placeholder="estoque" required ng-model="blusa.estoque">
+                    <select class="form-control" id="tipoProduto" name="categoriaProduto">
                         <option value="">--Selecione o Tipo do Produto--</option>
                         <option value="blusasVitrine">Camisa</option>
                         <option value="livrosVitrine">Livro</option>
                     </select>
-                </form>
-                <button class="btn btn-dark" onclick="cadastrarProduto()">Cadastrar</button>
+                </form>      
+                <button class="btn btn-dark" ng-click="adicionarNaLista(blusa)">Cadastrar</button> <!--onclick="cadastrarProduto()"-->
+                <h2>{{blusa}}</h2>
             </div>            
         </section>
         <footer>
