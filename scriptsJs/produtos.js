@@ -150,6 +150,7 @@ atualizaCarrinho = ()=>{
 }
 var buttonsBlusas = document.getElementsByClassName('btnBlusas');
 var buttonLivros = document.getElementsByClassName('btnLivros');
+
 for(i=0; i < buttonsBlusas.length; i++){
     buttonsBlusas[i].addEventListener('click', function(){
         let key = this.getAttribute('key');

@@ -100,17 +100,17 @@ header{
         & a:hover{
             color:#888;
         }
-        span{
+        p{
             position: relative;
-            top: 15px;
-            right: 21.5px;
+            top: -18px;
+            left: 6.5px;
             width: 15px;
             height: 15px;
             text-align: center;
             color: white;
             font-size: 9px;
             line-height: 15px;
-            background-color: rgb(160, 46, 46);
+            background-color: rgb(37, 182, 122);
             border-radius: 50%;
             cursor: pointer;
         }
@@ -351,6 +351,13 @@ section#area-contatos{
         }
         #areaSacola{
             margin-right: 10px;
+        }
+    }
+
+    .card{
+        h3{
+            right: 15px;
+            text-align: end;
         }
     }
     
