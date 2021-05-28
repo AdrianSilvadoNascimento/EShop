@@ -55,7 +55,7 @@ iniciarLoja = () => {
         `;
     }
 }
-iniciarLoja();
+//iniciarLoja();
 
 function cadastrarProduto(){
     let id = parseInt(document.getElementById('idProduto').value);

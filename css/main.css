@@ -141,6 +141,7 @@ header #areaSacola span {
   line-height: 15px;
   background-color: #a02e2e;
   border-radius: 50%;
+  cursor: pointer;
 }
 
 section#area-categorias {
