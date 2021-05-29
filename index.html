@@ -37,6 +37,12 @@
                 <li>
                     <a href="#">Sobre Nós</a>
                 </li>
+                <li>                
+                    <a href="#" class="">login</a>
+                </li>
+                <li>
+                    <a href="#" class="sublinhado">Cadastre-se</a>
+                </li>
             </ul>
             <!--Menu em Mobile-->
             <div class="menu">
@@ -53,31 +59,31 @@
                     <li>
                         <a href="#">Sobre Nós</a>
                     </li>
+                    <li>
+                        <a href="">Login</a>
+                    </li>
+                    <li>
+                        <a href="">Cadastrar</a>
+                    </li>
                 </ul>
-            </div>
-            <!--Area da sacola-login-cadastrar-->
-            <div id="areaSacola">
-                <a href="#" class="">login/
-                    <a href="#" class="">\Cadastre-se</a><!--btn btn-sm btn-light-->
-                </a>
+            </div>              
+            <div id="areaSacola" class="container">
                 <a href="">
                     <i id="sacola" class="fas fa-shopping-bag fa-2x"></i>
                     <p id="quantidadeSacola">0</p>
                 </a>
-                
-                
             </div>
             <form class="container">
                 <div class="input-group">
                     <input type="text" class="form-control" id="search" ng-model="search" placeholder="O que está procurando?">
-                    <div class="input-group-append">
+                    <!--<div class="input-group-append">
                         <button class="btn">
                             <i class="fas fa-search"></i>
                         </button>
-                    </div>
-                </div>
-                
+                    </div>-->
+                </div>                
             </form>
+            
             <!--<div class="container">
                 <div class="row">
                     <div class="col-md-6">
@@ -210,6 +216,7 @@
 
         <section id="area-cadastrar">
             <div class="container">
+                <h2>Área Admin</h2>
                 <form>
                     <input class="form-control" id="idProduto" type="number" name="idProduto" placeholder="idProduto" required ng-model="produto.id">
                     <input class="form-control" id="nomeProduto" type="text" name="nomeProduto" placeholder="nomeProduto" required ng-model="produto.nome">

@@ -84,6 +84,10 @@ header ul#menuCommon {
           justify-content: flex-end;
 }
 
+header ul#menuCommon .sublinhado {
+  text-decoration: underline;
+}
+
 header ul#menuCommon a {
   text-align: center;
   color: white;
@@ -103,14 +107,15 @@ header .btn {
 }
 
 header #areaSacola {
+  position: relative;
+  top: 80px;
+  left: 15vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  margin-right: 100px;
-  margin-bottom: 10px;
 }
 
 header #areaSacola #sacola {
@@ -445,7 +450,8 @@ h2 {
     display: block;
   }
   header #areaSacola {
-    margin-right: 10px;
+    top: 30px;
+    left: 3vw;
   }
   .card h3 {
     right: 15px;

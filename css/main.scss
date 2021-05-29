@@ -64,6 +64,9 @@ header{
         list-style: none;
         display: flex;
         justify-content: flex-end;
+        .sublinhado{
+            text-decoration: underline;
+        }
          a{
              text-align: center;
              color: white;
@@ -82,10 +85,11 @@ header{
     }
 
     #areaSacola{
+        position: relative;
+        top: 80px;
+        left: 15vw;
         display: flex;
         justify-content: flex-end;
-        margin-right: 100px;
-        margin-bottom: 10px;
         
         #sacola{
             background-size: contain;
@@ -354,7 +358,8 @@ h2{
             display: block;
         }
         #areaSacola{
-            margin-right: 10px;
+            top: 30px;
+            left: 3vw;
         }
     }
 
