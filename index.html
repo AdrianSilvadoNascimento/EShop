@@ -62,7 +62,7 @@
                 </a>
                 <a href="">
                     <i id="sacola" class="fas fa-shopping-bag fa-2x"></i>
-                    <p id="quantidadeSacola" ng-bind="blusa.quantidade"></p>
+                    <p id="quantidadeSacola">0</p>
                 </a>
                 
                 
@@ -124,28 +124,28 @@
                         <img src="images/camisa-branca.jpg" class="img-fluid" alt="exemplo">
                         <h3>CAMISETAS</h3>
                     </div>-->
-                    <a href="#bg-produtos-blusas" class="categorias">
+                    <a href="#vitrine" class="categorias" ng-click="category = 'camisa'">
                         <img src="images/camisa-branca-categorias.png" class="img-fluid" alt="">
                         camisetas
                     </a>                    
-                    <a href="#bg-produtos-blusas" class="categorias">
+                    <a href="#vitrine" class="categorias" ng-click="category = 'camisa'">
                         <img src="images/camisa-branca-mulher-categorias.png" class="img-fluid" alt="">
                         camisetas
                     </a>
-                    <a href="#bg-produtos-blusas" class="categorias">
+                    <a href="#vitrine" class="categorias" ng-click="category = 'camisa'">
                         <img src="images/camisa-preta-categorias.png" class="img-fluid" alt="">
                         camisetas
                     </a>
-                    <a href="#bg-produtos-blusas" class="categorias">
+                    <a href="#vitrine" class="categorias" ng-click="category = 'camisa'">
                         <img src="images/camisa-preta-mulher-categorias.png" class="img-fluid" alt="">
                         camisetas
                     </a>
-                    <a href="#bg-produtos-livros" class="categorias">
+                    <a href="#vitrine" class="categorias" ng-click="category = 'livro'">
                         <img src="images/livro-categorias.png" class="img-fluid" alt="">
                         livros
                     </a>
-                    <a href="#bg-produtos-livros" class="categorias">
-                        <img src="images/livro1-categorias.png" class="img-fluid" alt="">
+                    <a href="#vitrine" class="categorias">
+                        <img src="images/livro1-categorias.png" class="img-fluid" ng-click="category = 'livro'" alt="">
                         livros
                     </a>
                 </div>
@@ -164,20 +164,20 @@
                         <div id="bg-produtos-livros" class="row">
 
                         </div>-->
-                        <h3 class="vitrineTag">Vitrine De Blusas</h3>
+                        <h3 class="vitrineTag" id="vitrine">Vitrine</h3>
                         <div id="bg-produtos-blusas" class="row">
-                            <div ng-repeat="blusa in blusas | orderBy: 'nome' | filter: search">
-                                <div class="card" id="{{blusa.nome}}">
-                                    <img src="{{blusa.img}}" class="img-fluid" alt="{{blusa.nome}}">
+                            <div ng-repeat="produto in produtosLoja | orderBy: categoria | filter: search">
+                                <div class="card" id="{{produto.nome}}">
+                                    <img src="{{produto.img}}" class="img-fluid" alt="{{produto.nome}}">
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <p>Qtd.{{blusa.estoque}}</p>
+                                            <p>Qtd.{{produto.estoque}}</p>
                                         </div>
                                         <div class="col-md-6">
-                                            <h3>{{blusa.preco}}</h3>
+                                            <h3>{{produto.preco}}</h3>
                                         </div>
                                     </div>                     
-                                    <button key="{{blusa.id}}" class="btn btnBlusas btnAdd" ng-click="adicionarQuantidade = adicionarQuantidade + 1 ">Adicionar ao Carrinho</button>
+                                    <button key="{{produto.id}}" class="btn btnBlusas btnAdd" ng-click="adicionarQuantidade = adicionarQuantidade + 1 ">Adicionar ao Carrinho</button>
                                     <span ng-bind="adicionarQuantidade"></span>
                                 </div>
                             </div>
@@ -211,21 +211,20 @@
         <section id="area-cadastrar">
             <div class="container">
                 <form>
-                    <input class="form-control" id="idProduto" type="number" name="idProduto" placeholder="idProduto" required ng-model="blusa.id">
-                    <input class="form-control" id="nomeProduto" type="text" name="nomeProduto" placeholder="nomeProduto" required ng-model="blusa.nome">
-                    <input class="form-control" id="caminhoFotoProduto" type="text" name="caminhoFoto" placeholder="caminhoFoto" required ng-model="blusa.foto">
-                    <input class="form-control" id="quantidadeProduto" type="number" name="quantidade" placeholder="quantidade" required ng-model="blusa.quantidade">
-                    <!--<input class="form-control" id="categoriaProduto" type="text" name="categoria" placeholder="categoria" required ng-model="categoria">-->
-                    <input class="form-control" id="precoProduto" type="text" name="preco" placeholder="preco" required ng-model="blusa.preco">
-                    <input class="form-control" id="estoqueProduto" type="number" name="estoque" placeholder="estoque" required ng-model="blusa.estoque">
-                    <select class="form-control" id="tipoProduto" name="categoriaProduto">
-                        <option value="">--Selecione o Tipo do Produto--</option>
-                        <option value="blusasVitrine">Camisa</option>
-                        <option value="livrosVitrine">Livro</option>
+                    <input class="form-control" id="idProduto" type="number" name="idProduto" placeholder="idProduto" required ng-model="produto.id">
+                    <input class="form-control" id="nomeProduto" type="text" name="nomeProduto" placeholder="nomeProduto" required ng-model="produto.nome">
+                    <input class="form-control" id="caminhoFotoProduto" type="text" name="caminhoFoto" placeholder="caminhoFoto" required ng-model="produto.img">
+                    <input class="form-control" id="quantidadeProduto" type="number" name="quantidade" placeholder="quantidade" required ng-model="produto.quantidade">
+                    <!--<input class="form-control" id="categoriaProduto" type="text" name="categoria" placeholder="categoria" required ng-model="produto.categoria">-->
+                    <input class="form-control" id="precoProduto" type="text" name="preco" placeholder="preco" required ng-model="produto.preco">
+                    <input class="form-control" id="estoqueProduto" type="number" name="estoque" placeholder="estoque" required ng-model="produto.estoque">
+                    <select class="form-control" id="tipoProduto" ng-model="produto.tipo" ng-options="categoria.nome for categoria in categorias">
+                        <option value="">Selecione o Tipo do Produto</option>
+                        
                     </select>
                 </form>      
-                <button class="btn btn-dark" ng-click="adicionarNaLista(blusa)">Cadastrar</button> <!--onclick="cadastrarProduto()"-->
-                <h2>{{blusa}}</h2>
+                <button class="btn btn-dark" ng-click="adicionarNaLista(produto)" ng-disabled="!produto.id || !produto.nome || !produto.img || !produto.quantidade || !produto.tipo || !produto.preco || !produto.estoque">Cadastrar</button> <!--onclick="cadastrarProduto()"-->
+                <h2></h2>
             </div>            
         </section>
         <footer>
