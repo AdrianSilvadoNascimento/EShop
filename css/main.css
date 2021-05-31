@@ -17,7 +17,7 @@ body {
 }
 
 header {
-  background: #555;
+  background: #222;
   /*.menu:focus, #menuDrop:focus{
         outline: white;
     }*/
@@ -198,9 +198,13 @@ section#area-categorias .categorias img:hover {
           transform: translateY(-1.5vh);
 }
 
+#carrossel span {
+  color: white;
+}
+
 section#area-produtos {
   background: #222;
-  padding-top: 10vh;
+  padding-top: 2vh;
   padding-bottom: 10vh;
 }
 
