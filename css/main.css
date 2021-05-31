@@ -24,8 +24,9 @@ header {
 }
 
 header #logo {
+  width: 200px;
   position: relative;
-  top: 12px;
+  top: 35px;
   font-size: 2em;
   color: white;
   font-style: italic;
@@ -164,6 +165,8 @@ section#area-categorias #linha-categorias {
 }
 
 section#area-categorias .categorias {
+  -webkit-animation: surgirRight 0.5s;
+          animation: surgirRight 0.5s;
   padding: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -188,6 +191,11 @@ section#area-categorias .categorias img {
   border-radius: 50%;
   -webkit-transition: 0.2s;
   transition: 0.2s;
+}
+
+section#area-categorias .categorias img:hover {
+  -webkit-transform: translateY(-1.5vh);
+          transform: translateY(-1.5vh);
 }
 
 section#area-produtos {
@@ -228,61 +236,27 @@ section#area-produtos .vitrineTag {
   color: #f6f6f6;
 }
 
-section#area-produtos aside {
-  margin: 15px 0;
-  max-width: 400px;
-  background: white;
+section#area-produtos ul {
+  background: rgba(255, 255, 255, 0.8);
   border-radius: 5px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  list-style: none;
 }
 
-section#area-produtos aside table {
-  margin: 10px 0 0 0 auto;
-  display: -ms-grid;
-  display: grid;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  border-collapse: collapse;
+section#area-produtos a {
   text-align: center;
-}
-
-section#area-produtos aside td, section#area-produtos aside th {
-  border: 1px solid #888;
-}
-
-section#area-produtos aside h2 {
-  padding: 15px 0 5px 0;
-  margin: 10px 0;
-  text-align: center;
-  font-size: 1.2em;
-}
-
-section#area-produtos aside button {
-  /*position: relative;
-            top: 5px;
-            left: 5%;*/
+  padding: 10px;
   display: block;
-  padding: 7px 40px;
-  margin: 0 0 20px 0;
-  border: none;
-  color: white;
-  background: rgba(0, 0, 0, 0.5);
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
+  color: #333;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
 }
 
-section#area-produtos aside button:hover {
-  color: rgba(0, 0, 0, 0.7);
-}
-
-section#area-produtos aside button:focus {
-  outline: none;
+section#area-produtos a:hover {
+  text-decoration: none;
+  background: #888;
+  color: #f6f6f6;
+  letter-spacing: 5px;
+  border-radius: 5px;
 }
 
 .card {
@@ -319,7 +293,7 @@ section#area-produtos aside button:focus {
   position: relative;
   top: 0;
   left: 20px;
-  margin: 5px 0 0 0;
+  margin-top: 5px;
   font-size: 1.3em;
 }
 
@@ -420,6 +394,32 @@ h2 {
   color: white;
 }
 
+@-webkit-keyframes surgirRight {
+  from {
+    -webkit-transform: translateX(30vw);
+            transform: translateX(30vw);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes surgirRight {
+  from {
+    -webkit-transform: translateX(30vw);
+            transform: translateX(30vw);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+
 @media screen and (max-width: 480px) {
   #logo {
     -webkit-box-pack: center;
@@ -432,6 +432,12 @@ h2 {
   #areaSacola {
     margin-right: 10px;
   }
+  .card {
+    width: 200px;
+  }
+  .card img {
+    width: 250px;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -439,6 +445,7 @@ h2 {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    width: 100%;
   }
   header ul#menuCommon {
     display: none;
@@ -454,7 +461,9 @@ h2 {
     left: 3vw;
   }
   .card h3 {
-    right: 15px;
+    top: -20px;
+    margin-top: 0;
+    left: 0;
     text-align: end;
   }
 }

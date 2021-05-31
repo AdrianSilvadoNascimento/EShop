@@ -112,6 +112,8 @@ function cadastrarProduto(){
         `;
     }
 }
+
+
 atualizaCarrinho = ()=>{
     let conteudoCarrinho = document.getElementById('carrinho');
     conteudoCarrinho.innerHTML = "";

@@ -70,8 +70,9 @@
             <div id="areaSacola" class="container">
                 <a href="">
                     <i id="sacola" class="fas fa-shopping-bag fa-2x"></i>
-                    <p id="quantidadeSacola">0</p>
+                    <p id="quantidadeSacola"></p>
                 </a>
+                    
             </div>
             <form class="container">
                 <div class="input-group">
@@ -83,44 +84,6 @@
                     </div>-->
                 </div>                
             </form>
-            
-            <!--<div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <h1 id="logo">Logo Marca</h1>
-                        <a href="">Login</a>
-                        <a href="">Cadastrar</a>
-                        <nav>
-                            <ul>
-                                <li>
-                                    <a href="#">Home</a>
-                                </li>
-                                <li>
-                                    <a href="view/contatos.html">Contatos</a>
-                                </li>
-                                <li>
-                                    <a href="#">Sobre Nós</a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                    <div class="col-md-6">
-                        <nav>
-                            <ul>
-                                <li>
-                                    <a href="#">Home</a>
-                                </li>
-                                <li>
-                                    <a href="view/contatos.html">Contatos</a>
-                                </li>
-                                <li>
-                                    <a href="#">Sobre Nós</a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>             
-            </div>          -->  
         </header> <!-- Final Cabecalho-->
 
         <section id="area-categorias" class="sticky-top"> <!-- Categorias de Produtos -->
@@ -130,27 +93,27 @@
                         <img src="images/camisa-branca.jpg" class="img-fluid" alt="exemplo">
                         <h3>CAMISETAS</h3>
                     </div>-->
-                    <a href="#vitrine" class="categorias" ng-click="category = 'camisa'">
+                    <a href="#camisa" class="categorias" ng-click="category = 'camisa'">
                         <img src="images/camisa-branca-categorias.png" class="img-fluid" alt="">
                         camisetas
                     </a>                    
-                    <a href="#vitrine" class="categorias" ng-click="category = 'camisa'">
+                    <a href="#camisa" class="categorias" ng-click="category = 'camisa'">
                         <img src="images/camisa-branca-mulher-categorias.png" class="img-fluid" alt="">
                         camisetas
                     </a>
-                    <a href="#vitrine" class="categorias" ng-click="category = 'camisa'">
+                    <a href="#camisa" class="categorias" ng-click="category = 'camisa'">
                         <img src="images/camisa-preta-categorias.png" class="img-fluid" alt="">
                         camisetas
                     </a>
-                    <a href="#vitrine" class="categorias" ng-click="category = 'camisa'">
+                    <a href="#camisa" class="categorias" ng-click="category = 'camisa'">
                         <img src="images/camisa-preta-mulher-categorias.png" class="img-fluid" alt="">
                         camisetas
                     </a>
-                    <a href="#vitrine" class="categorias" ng-click="category = 'livro'">
+                    <a href="#livro" class="categorias" ng-click="category = 'livro'">
                         <img src="images/livro-categorias.png" class="img-fluid" alt="">
                         livros
                     </a>
-                    <a href="#vitrine" class="categorias">
+                    <a href="#livro" class="categorias">
                         <img src="images/livro1-categorias.png" class="img-fluid" ng-click="category = 'livro'" alt="">
                         livros
                     </a>
@@ -160,20 +123,25 @@
 
         <section id="area-produtos"> <!-- Começo Produtos -->
             <div class="row container-fluid m-auto">
-                <!--<div class="col-md-9">-->
-                    <div class="produtos"> <!--class="container"-->
-                        <!--<h3 class="vitrineTag">Vitrine De Blusas</h3>
+                <div class="col-md-3 d-none d-md-block">
+                    <ul>
+                        <li>
+                            <a href="#">Camisas</a>
+                        </li>
+                        <li>
+                            <a href="#">Livros</a>
+                        </li>
+                        <li>
+                            <a href="#">Produtos Diversos</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-9">
+                    <div class="produtos">
+                        <h3 class="vitrineTag">Vitrine</h3>
                         <div id="bg-produtos-blusas" class="row">
-                            
-                        </div>
-                        <h3 class="vitrineTag">Vitrine De Livros</h3>
-                        <div id="bg-produtos-livros" class="row">
-
-                        </div>-->
-                        <h3 class="vitrineTag" id="vitrine">Vitrine</h3>
-                        <div id="bg-produtos-blusas" class="row">
-                            <div ng-repeat="produto in produtosLoja | orderBy: categoria | filter: search">
-                                <div class="card" id="{{produto.nome}}">
+                            <div ng-repeat="produto in produtosLoja | orderBy: order | filter: search">
+                                <div class="card" id="{{produto.categoria}}">
                                     <img src="{{produto.img}}" class="img-fluid" alt="{{produto.nome}}">
                                     <div class="row">
                                         <div class="col-md-6">
@@ -182,36 +150,17 @@
                                         <div class="col-md-6">
                                             <h3>{{produto.preco}}</h3>
                                         </div>
-                                    </div>                     
-                                    <button key="{{produto.id}}" class="btn btnBlusas btnAdd" ng-click="adicionarQuantidade = adicionarQuantidade + 1 ">Adicionar ao Carrinho</button>
-                                    <span ng-bind="adicionarQuantidade"></span>
+                                    </div>
+                                    <button key="{{produto.id}}" class="btn btnBlusas btnAdd" onclick="adicionarQuantidade()" ng-click="adicionarQuantidade(produto)">Adicionar ao Carrinho</button><!--adicionarQuantidade = adicionarQuantidade + 1 -->
+                                    <!--<span ng-bind="adicionarQuantidade"></span>-->
                                 </div>
                             </div>
+                            
                              
                         </div>
                     </div>
                 </div>
-                <!--<div class="col-md-3"> Tabela lateral 
-                    <aside> 
-                        <div class="container d-none d-md-block">
-                            <h2>Resumo de Produtos</h2>
-                            <table id="carrinho" class="table table-striped table-responsive">
-                                <tr>
-                                    <th>Produto</th>
-                                    <th>Qtd.</th>
-                                    <th>Valor</th>
-                                </tr>
-                                <tr>
-                                    <td>Exemplo</td>
-                                    <td>01</td>
-                                    <td>R$34,99</td>
-                                </tr>
-                            </table>
-                            <button id="finalizarCompra" class="btn-block">Finalizar Compra</button>
-                        </div>
-                    </aside>
-                </div> <!-- Final tabela lateral
-            </div>-->
+            </div>
         </section> <!-- Final Produtos -->
 
         <section id="area-cadastrar">

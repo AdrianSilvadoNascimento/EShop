@@ -15,8 +15,9 @@ body{
 header{
     background: #555;
     #logo{
+        width: 200px;
         position: relative;
-        top: 12px;
+        top: 35px;
         font-size: 2em;
         color: white;
         font-style: italic;
@@ -129,6 +130,7 @@ section#area-categorias{
         overflow-x: auto;
     }
     .categorias{
+        animation: surgirRight 0.5s;
         padding: 20px;
         display: flex;
         flex-direction: column;
@@ -145,6 +147,9 @@ section#area-categorias{
         img{
             border-radius: 50%;
             transition: 0.2s;
+        }
+        & img:hover{
+            transform: translateY(-1.5vh);
         }
     }
 }
@@ -173,48 +178,25 @@ section#area-produtos{
     .vitrineTag{
         color: #f6f6f6;
     }
-    aside{
-        margin: 15px 0;
-        max-width: 400px;
-        background:white;
+    ul{
+        background: rgba(255, 255, 255, 0.8);
         border-radius: 5px;
-        display: flex;
-        justify-content: center;
-        table{
-            margin: 10px 0 0 0 auto;
-            display: grid;
-            justify-content: center;
-            border-collapse: collapse;
-            text-align: center;
-        }
-        td, th{
-            border: 1px solid #888;
-        }
-        h2{
-            padding: 15px 0 5px 0;
-            margin: 10px 0;
-            text-align: center;
-            font-size: 1.2em;
-        }
-        button{
-            /*position: relative;
-            top: 5px;
-            left: 5%;*/
-            display: block;
-            padding: 7px 40px;
-            margin: 0 0 20px 0;
-            border: none;
-            //border-radius: 5px;
-            color: white;
-            background:rgba(0, 0, 0, .5);
-            transition: 0.2s;
-        }
-        & button:hover{
-            color: rgba(0, 0, 0, .7);
-        }
-        & button:focus{
-            outline: none;
-        }
+        list-style: none;
+    }
+    a{
+        text-align: center;
+        padding: 10px;   
+        display: block;
+        color: #333;
+        transition: 0.2s ease-in-out;
+    }
+    & a:hover{
+        text-decoration: none;
+        background: #888;
+        color: #f6f6f6;
+        //transform: translateX(5vw);
+        letter-spacing: 5px;
+        border-radius: 5px;
     }
 }
 .card{
@@ -243,7 +225,7 @@ section#area-produtos{
         position: relative;
         top: 0;
         left: 20px;
-        margin: 5px 0 0 0;
+        margin-top: 5px;
         font-size: 1.3em;
     }
     span{
@@ -331,6 +313,19 @@ h2{
     color: white;
 }
 
+//-------------------------- Animações da Página  -------------------------------------
+@keyframes surgirRight{
+    from{
+        transform: translateX(30vw);
+        opacity: 0;
+    }
+    to{
+        transform: translateX(0);
+        opacity: 1;
+
+    }
+}
+
 //--------------------------   Media Responsiva   -------------------------------------
 @media screen and (max-width: 480px) {
     #logo{
@@ -342,11 +337,19 @@ h2{
     #areaSacola{
         margin-right: 10px;
     }
+    .card{
+        width: 200px;
+        img{
+            width: 250px;
+            //height: 190px;
+        }
+    }
 }
 @media screen and (max-width:767px){
     header{
         #logo{
             justify-content: center;
+            width: 100%;
         }
         ul#menuCommon{
             display: none;
@@ -365,7 +368,9 @@ h2{
 
     .card{
         h3{
-            right: 15px;
+            top: -20px;
+            margin-top: 0;
+            left: 0;
             text-align: end;
         }
     }
