@@ -46,7 +46,7 @@
             </ul>
             <!--Menu em Mobile-->
             <div class="menu">
-                <button id="menuDrop" onclick="abrirMenuDrop()" onmouseout="fecharMenuDrop()">
+                <button id="menuDrop" onclick="abrirMenuDrop()"> <!--onclick="fecharMenuDrop()" onmouseout="sairMenuDrop()"-->
                     <i class="fas fa-bars fa-2x" aria-hidden="true"></i>
                 </button>
                 <ul id="menuSmall">
@@ -70,7 +70,7 @@
             <div id="areaSacola" class="container">
                 <a href="">
                     <i id="sacola" class="fas fa-shopping-bag fa-2x"></i>
-                    <p id="quantidadeSacola"></p>
+                    <p id="quantidadeSacola" ng-init="produto.quantidade = 0" ng-bind="produto.quantidade"></p>
                 </a>
                     
             </div>
@@ -153,19 +153,19 @@
                 <div class="col-md-3 d-none d-md-block">
                     <ul>
                         <li>
-                            <a href="#">Camisas</a>
+                            <a href="">Camisas</a>
                         </li>
                         <li>
-                            <a href="#">Livros</a>
+                            <a href="">Livros</a>
                         </li>
                         <li>
-                            <a href="#">Produtos Diversos</a>
+                            <a href="">Produtos Diversos</a>
                         </li>
                     </ul>
                 </div>
                 <div class="col-md-9">
                     <div class="produtos">
-                        <h3 class="vitrineTag">Vitrine</h3>
+                        <!--<h3 class="vitrineTag">Vitrine</h3>-->
                         <div id="bg-produtos-blusas" class="row">
                             <div ng-repeat="produto in produtosLoja | orderBy: order | filter: search">
                                 <div class="card" id="{{produto.categoria}}">
@@ -178,7 +178,7 @@
                                             <h3>{{produto.preco}}</h3>
                                         </div>
                                     </div>
-                                    <button key="{{produto.id}}" class="btn btnBlusas btnAdd" onclick="adicionarQuantidade()" ng-click="adicionarQuantidade(produto)">Adicionar ao Carrinho</button><!--adicionarQuantidade = adicionarQuantidade + 1 -->
+                                    <button key="{{produto.id}}" class="btn btnBlusas btnAdd" ng-click="adicionarQuantidade(produto)">Adicionar ao Carrinho</button><!--adicionarQuantidade = adicionarQuantidade + 1 -->
                                     <!--<span ng-bind="adicionarQuantidade"></span>-->
                                 </div>
                             </div>

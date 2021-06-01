@@ -1,9 +1,24 @@
 let buttonDrop = document.getElementById('menuSmall').style;
+let menuAberto = false;
 
 function abrirMenuDrop(){
-    buttonDrop.display = 'block';
+    if(menuAberto == false){
+        buttonDrop.display = 'block';
+        return menuAberto = true;
+    }
+    if(menuAberto == true){
+        buttonDrop.display = 'none';
+        return menuAberto = false;
+    }
     
 }
-function fecharMenuDrop(){
-    buttonDrop.display = 'none';
+/*function fecharMenuDrop(){
+    if(menuAberto == true){
+        buttonDrop.display = 'none';
+        return menuAberto = false;
+    }
 }
+
+function sairMenuDrop(){
+    buttonDrop.display = 'none';
+}*/

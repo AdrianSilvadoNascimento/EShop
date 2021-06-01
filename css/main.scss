@@ -288,6 +288,13 @@ section#area-contatos{
     background: #222;
     margin: 0 auto;
 
+    .anim{
+        animation: surgirLeft 1s ease-in;
+    }
+    .sumir{
+        animation: sumirBaixo 1s;
+    }
+
     h2{
         padding-top: 10vh;
         margin-bottom: 5vh;
@@ -328,6 +335,28 @@ h2{
         transform: translateX(0);
         opacity: 1;
 
+    }
+}
+@keyframes surgirLeft{
+    from{
+        transform: translateX(-100vw);
+        opacity: 0;
+        filter: blur(5px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+        filter: blur(0);
+
+    }
+}
+
+@keyframes sumirBaixo{
+    from{
+        transform: translateY(0);
+    }
+    to{
+        transform: translateY(110vh);
     }
 }
 

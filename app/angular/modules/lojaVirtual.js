@@ -27,7 +27,10 @@ angular.module("lojaVirtual").controller("lojaVirtualCtrl", function($scope){
     };
 
     $scope.adicionaQuantidade = function(produto){
-        $scope.produtosLoja.quantidade + 1;
-        console.log(produto.quantidade);
-    };     
+        $scope.produto.quantidade + 1;
+    };
+    
+    $scope.sumirForm = function(){
+        $scope.sumirForm = 'sumirBaixo';
+    }
 });
