@@ -410,16 +410,11 @@ section#mensagemFeedback {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   padding-bottom: 15px;
+  overflow-y: auto;
 }
 
 section#mensagemFeedback #quote {
-  position: relative;
-  left: -15px;
   margin-top: 35px;
   color: #fff;
   width: 50px;
@@ -427,9 +422,7 @@ section#mensagemFeedback #quote {
 }
 
 section#mensagemFeedback .feed {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: inline-block;
   background: #888;
   border-radius: 5px;
   width: 300px;
@@ -442,6 +435,7 @@ section#mensagemFeedback .mensagem {
 }
 
 section#mensagemFeedback img {
+  padding: 10px;
   width: 50px;
   width: 50px;
 }
