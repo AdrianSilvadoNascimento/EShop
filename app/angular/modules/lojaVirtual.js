@@ -20,17 +20,20 @@ angular.module("lojaVirtual").controller("lojaVirtualCtrl", function($scope){
         {nome: 'livro'}
     ];
 
+    $scope.clientes = [
+    ];
+
     $scope.adicionarNaLista = function(produto){
         $scope.produtosLoja.push(angular.copy(produto));
         delete $scope.produto;
-        console.log($scope.produtosLoja);
     };
 
     $scope.adicionaQuantidade = function(produto){
-        $scope.produto.quantidade + 1;
+        produto.quantidade + 1;
     };
-    
-    $scope.sumirForm = function(){
-        $scope.sumirForm = 'sumirBaixo';
+
+    $scope.adicionarCliente = function(cliente){
+        $scope.clientes.push(angular.copy(cliente));
+        delete $scope.cliente;
     }
 });

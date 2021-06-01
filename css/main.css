@@ -362,6 +362,9 @@ section#area-contatos {
   height: 80vh;
   background: #222;
   margin: 0 auto;
+  /*.sumir{
+        animation: sumirBaixo 1s;
+    }*/
 }
 
 section#area-contatos .anim {
@@ -369,16 +372,11 @@ section#area-contatos .anim {
           animation: surgirLeft 1s ease-in;
 }
 
-section#area-contatos .sumir {
-  -webkit-animation: sumirBaixo 1s;
-          animation: sumirBaixo 1s;
-}
-
 section#area-contatos h2 {
   padding-top: 10vh;
   margin-bottom: 5vh;
   color: white;
-  font-size: 1.2em;
+  font-size: 2em;
   font-weight: 500;
   text-align: center;
 }
@@ -404,8 +402,52 @@ section#area-contatos textarea {
   resize: none;
 }
 
-h2 {
-  color: white;
+section#mensagemFeedback {
+  background-color: #222;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-bottom: 15px;
+}
+
+section#mensagemFeedback #quote {
+  position: relative;
+  left: -15px;
+  margin-top: 35px;
+  color: #fff;
+  width: 50px;
+  height: 50px;
+}
+
+section#mensagemFeedback .feed {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: #888;
+  border-radius: 5px;
+  width: 300px;
+  max-height: 350px;
+}
+
+section#mensagemFeedback .mensagem {
+  width: 200px;
+  margin-top: 15px;
+}
+
+section#mensagemFeedback img {
+  width: 50px;
+  width: 50px;
+}
+
+section#mensagemFeedback p {
+  color: #f8f8f8;
 }
 
 @-webkit-keyframes surgirRight {
@@ -535,6 +577,16 @@ h2 {
     margin-top: 0;
     left: 0;
     text-align: end;
+  }
+  section#area-contatos input {
+    width: 60vw;
+  }
+  section#area-contatos input[type="submit"] {
+    width: 30vw;
+    margin-top: 10px;
+  }
+  section#area-contatos textarea {
+    width: 60vw;
   }
 }
 /*# sourceMappingURL=main.css.map */

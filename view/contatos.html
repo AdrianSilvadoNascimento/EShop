@@ -75,21 +75,38 @@
         </header> <!-- Final Cabecalho-->
 
         <section id="area-contatos">
-            <div class="container">
-                <h1 class="text-light text-center mb-5 anim">Entre em Contato Conosco</h1>
-                <form>
-                    <input type="text" class="form-control anim" name="name" id="name" placeholder="Nos diga seu nome" required ng-model="nome">
-                    <input type="email" class="form-control anim" name="email" id="email" placeholder="Nos diga seu E-mail" required ng-model="email">
-                    <input type="phone" class="form-control anim" name="phone" id="phoneNumber" placeholder="Nos diga seu número de telefone" ng-model="phone">
-                    <textarea name="message" class="form-control anim" id="area-message" cols="30" rows="5" placeholder="Acreditamos que uma boa comunicação é imprescindível para se ter um bom relacionamento." required ng-model="feedback"></textarea>
-                    <input type="submit" class="btn btn-outline-light anim" value="Enviar" ng-disabled="!nome || !email || !phone || !feedback" ng-class="sumirForm">
+            <div class="container-fluid">
+                <h2 class="text-light text-center mb-5 anim">Entre em Contato Conosco</h2>
+                <form name="clienteForm">
+                    <input type="text" class="form-control anim" name="name" id="name" placeholder="Nos diga seu nome" ng-model="cliente.nome" ng-required="true">
+                    <input type="email" class="form-control anim" name="email" id="email" placeholder="Nos diga seu E-mail" ng-model="cliente.email" ng-required="true">
+                    <input type="phone" class="form-control anim" name="phone" id="phoneNumber" placeholder="Nos diga seu número de telefone" ng-model="cliente.phone" ng-required="true">
+                    <textarea name="message" class="form-control anim" id="area-message" cols="30" rows="5" placeholder="Acreditamos que uma boa comunicação é imprescindível para se ter um bom relacionamento." ng-model="cliente.feedback" ng-required="true"></textarea>
+                    <input type="button" ng-click="adicionarCliente(cliente)" class="btn btn-outline-light anim" value="Enviar" ng-disabled="clienteForm.$invalid">
                 </form>
             </div>            
+        </section>
+
+        <section id="mensagemFeedback">
+            <div class="container">
+                <div ng-repeat="cliente in clientes">
+                    <div class="feed">
+                        <h4 class="text-light">
+                            <img src="../images/imgFeedback/user-secret.svg" class="img-fluid mb-5" alt="user">
+                            {{cliente.nome}}
+                        </h4>
+                        <div class="mensagem">
+                            <i id="quote" class="fas fa-quote-left fa-2x"></i>
+                            <p>{{cliente.feedback}}</p>
+                        </div>
+                    </div>                    
+                </div>
+            </div>
         </section>
  
         <footer>
             <div class="container">
-                <div class="m-auto">
+                <div class="rodape">
                     <ul>
                         <li>
                             <a href="../index.html">Home</a>

@@ -169,7 +169,7 @@
                         <div id="bg-produtos-blusas" class="row">
                             <div ng-repeat="produto in produtosLoja | orderBy: order | filter: search">
                                 <div class="card" id="{{produto.categoria}}">
-                                    <img src="{{produto.img}}" class="img-fluid" alt="{{produto.nome}}">
+                                    <img ng-src="{{produto.img}}" class="img-fluid" alt="{{produto.nome}}">
                                     <div class="row">
                                         <div class="col-md-6">
                                             <p>Qtd.{{produto.estoque}}</p>
@@ -193,20 +193,20 @@
         <section id="area-cadastrar">
             <div class="container">
                 <h2>Área Admin</h2>
-                <form>
-                    <input class="form-control" id="idProduto" type="number" name="idProduto" placeholder="idProduto" required ng-model="produto.id">
-                    <input class="form-control" id="nomeProduto" type="text" name="nomeProduto" placeholder="nomeProduto" required ng-model="produto.nome">
-                    <input class="form-control" id="caminhoFotoProduto" type="text" name="caminhoFoto" placeholder="caminhoFoto" required ng-model="produto.img">
-                    <input class="form-control" id="quantidadeProduto" type="number" name="quantidade" placeholder="quantidade" required ng-model="produto.quantidade">
+                <form name="produtoForm">
+                    <input class="form-control" id="idProduto" type="number" name="idProduto" placeholder="idProduto"ng-model="produto.id" ng-required="true">
+                    <input class="form-control" id="nomeProduto" type="text" name="nomeProduto" placeholder="nomeProduto" ng-model="produto.nome" ng-required="true">
+                    <input class="form-control" id="caminhoFotoProduto" type="text" name="caminhoFoto" placeholder="caminhoFoto" ng-model="produto.img" ng-required="true">
+                    <input class="form-control" id="quantidadeProduto" type="number" name="quantidade" placeholder="quantidade" ng-model="produto.quantidade" ng-required="true">
                     <!--<input class="form-control" id="categoriaProduto" type="text" name="categoria" placeholder="categoria" required ng-model="produto.categoria">-->
-                    <input class="form-control" id="precoProduto" type="text" name="preco" placeholder="preco" required ng-model="produto.preco">
-                    <input class="form-control" id="estoqueProduto" type="number" name="estoque" placeholder="estoque" required ng-model="produto.estoque">
-                    <select class="form-control" id="tipoProduto" ng-model="produto.tipo" ng-options="categoria.nome for categoria in categorias">
+                    <input class="form-control" id="precoProduto" type="text" name="preco" placeholder="preco" ng-model="produto.preco" ng-required="true">
+                    <input class="form-control" id="estoqueProduto" type="number" name="estoque" placeholder="estoque" ng-model="produto.estoque" ng-required="true">
+                    <select class="form-control" id="tipoProduto" ng-model="produto.tipo" ng-options="categoria.nome for categoria in categorias" ng-required="true">
                         <option value="">Selecione o Tipo do Produto</option>
                         
                     </select>
                 </form>      
-                <button class="btn btn-dark" ng-click="adicionarNaLista(produto)" ng-disabled="!produto.id || !produto.nome || !produto.img || !produto.quantidade || !produto.tipo || !produto.preco || !produto.estoque">Cadastrar</button> <!--onclick="cadastrarProduto()"-->
+                <button class="btn btn-dark" ng-click="adicionarNaLista(produto)" ng-disabled="produtoForm.$invalid">Cadastrar</button> <!--onclick="cadastrarProduto()"-->
                 <h2></h2>
             </div>            
         </section>
