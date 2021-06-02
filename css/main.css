@@ -39,14 +39,22 @@ header #search {
   border-radius: 0;
 }
 
-header #menuDrop {
-  display: none;
-  background: transparent;
+header .class {
   width: 50px;
   height: 50px;
-  background-size: contain;
-  border: none;
+  border: 2px solid white;
+}
+
+header #menuDrop {
+  display: none;
+  width: 40px;
+  height: 40px;
+  background-image: url("../images/bars.svg");
+  background-size: 30px;
+  background-repeat: no-repeat;
+  background-position: center;
   color: #888;
+  z-index: 5;
 }
 
 header ul#menuSmall {
@@ -536,7 +544,7 @@ section#mensagemFeedback p {
     display: block;
   }
   #areaSacola {
-    margin-right: 10px;
+    left: 2vw;
   }
   .card {
     width: 200px;
@@ -563,8 +571,8 @@ section#mensagemFeedback p {
     display: block;
   }
   header #areaSacola {
-    top: 30px;
-    left: 3vw;
+    top: -54px;
+    left: 2vw;
   }
   .card h3 {
     top: -20px;
