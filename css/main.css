@@ -39,14 +39,15 @@ header #search {
   border-radius: 0;
 }
 
-header .class {
-  width: 50px;
-  height: 50px;
-  border: 2px solid white;
+header .menu {
+  width: 40px;
+  height: 40px;
 }
 
 header #menuDrop {
   display: none;
+  position: relative;
+  top: 30px;
   width: 40px;
   height: 40px;
   background-image: url("../images/bars.svg");
@@ -54,17 +55,18 @@ header #menuDrop {
   background-repeat: no-repeat;
   background-position: center;
   color: #888;
-  z-index: 5;
+  outline: none;
 }
 
 header ul#menuSmall {
   position: relative;
-  top: -22px;
+  top: 3px;
   margin-bottom: 0;
   list-style: none;
   display: none;
   background: #999;
   width: 120px;
+  z-index: 50;
 }
 
 header ul#menuSmall li {
@@ -160,6 +162,7 @@ header #areaSacola p {
 
 section#area-categorias {
   background: rgba(100, 100, 100, 0.7);
+  z-index: 1;
 }
 
 section#area-categorias #linha-categorias {
@@ -543,9 +546,6 @@ section#mensagemFeedback p {
   #menuDrop {
     display: block;
   }
-  #areaSacola {
-    left: 2vw;
-  }
   .card {
     width: 200px;
   }
@@ -571,8 +571,14 @@ section#mensagemFeedback p {
     display: block;
   }
   header #areaSacola {
-    top: -54px;
-    left: 2vw;
+    width: 80px;
+    height: 80px;
+    top: -16px;
+    margin-right: 0;
+    left: 0.5vw;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   .card h3 {
     top: -20px;
