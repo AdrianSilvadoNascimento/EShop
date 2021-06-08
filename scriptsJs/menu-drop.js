@@ -10,7 +10,12 @@ function abrirMenuDrop(){
         buttonDrop.display = 'none';
         return menuAberto = false;
     }
-    
+}
+function fecharMenu() {
+    if(menuAberto == true){
+        buttonDrop.display = 'none';
+        return menuAberto = false;
+    }
 }
 /*function fecharMenuDrop(){
     if(menuAberto == true){
