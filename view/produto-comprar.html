@@ -1,0 +1,161 @@
+<!doctype html>
+<html ng-app="lojaVirtual">
+<html lang="en">
+<head>
+    <title>Loja Virtual</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!--AngularJS-->
+    <script src="../app/angular/angular.js"></script>
+    <script src="../app/angular/angular-messages.min.js"></script>
+    <script src="../app/app.js"></script>
+    <script src="../app/angular/modules/lojaVirtual.js"></script>
+
+    <!-- Estilo SCSS -->
+    <link rel="stylesheet" href="../css/main.css">
+
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+    <body ng-controller="lojaVirtualCtrl">
+        <header class="container-fluid"> <!-- Começo Cabecalho -->
+            <h1 id="logo">{{logo}}</h1>
+            <!--Menu Normal-->
+            <ul id="menuCommon">
+                <li>
+                    <a href="../index.html">Home</a>
+                </li>
+                <li>
+                    <a href="contatos.html">Contatos</a>
+                </li>
+                <li>
+                    <a href="#">Sobre Nós</a>
+                </li>
+                <li>                
+                    <a href="#" class="">login</a>
+                </li>
+                <li>
+                    <a href="#" class="sublinhado">Cadastre-se</a>
+                </li>
+            </ul>
+            <!--Menu em Mobile-->
+            <div class="menu">
+                <input type="button" id="menuDrop" onclick="abrirMenuDrop()"> <!--onclick="fecharMenuDrop()" onmouseout="sairMenuDrop()"-->
+                    <!--<i class="fas fa-bars fa-2x" aria-hidden="true"></i>-->
+                <ul id="menuSmall">
+                    <li>
+                        <a href="../index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="contatos.html">Contatos</a>
+                    </li>
+                    <li>
+                        <a href="#">Sobre Nós</a>
+                    </li>
+                    <li>
+                        <a href="">Login</a>
+                    </li>
+                    <li>
+                        <a href="">Cadastrar</a>
+                    </li>
+                </ul>
+            </div>              
+            <div id="areaSacola" class="container">
+                <a href="">
+                    <i id="sacola" class="fas fa-shopping-bag fa-2x"></i>
+                    <p> {{sacolaProduto}} </p>
+                </a>
+                    
+            </div>
+            <form class="container">
+                <div class="input-group">
+                    <input type="text" class="form-control" id="search" ng-model="search" placeholder="O que está procurando?">
+                    <!--<div class="input-group-append">
+                        <button class="btn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>-->
+                </div>                
+            </form>
+        </header> <!-- Final Cabecalho-->
+
+        <section id="area-produtos"> <!-- Começo Produtos -->
+            <div class="row container-fluid m-auto">
+                <div class="col-md-3 d-none d-md-block">
+                    <ul>
+                        <li>
+                            <a href="">Camisas</a>
+                        </li>
+                        <li>
+                            <a href="">Livros</a>
+                        </li>
+                        <li>
+                            <a href="">Produtos Diversos</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-9">
+                    <div class="produtos">
+                        <!--<h3 class="vitrineTag">Vitrine</h3>-->
+                        <div id="bg-produtos-blusas" class="row">
+                            <div ng-repeat="produtoAComprar in produtosAComprar | orderBy: order | filter: search">
+                                <div class="card" id="{{produtoAComprar.categoria}}">
+                                    <img ng-src="{{produtoAComprar.img}}" class="img-fluid" alt="{{produtoAComprar.nome}}">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <p>Qtd.{{produtoAComprar.estoque}}</p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <h3>{{produtoAComprar.preco | currency : "R$"}}</h3>
+                                        </div>
+                                    </div>
+                                    <div style="color: red; cursor:pointer;" ng-click="removerItem(produtoAComprar)">REMOVER PRODUTO</div>
+                                    <!--<a href="produto-comprar.html" key="{{produto.id}}" class="btn btnBlusas btnAdd" ng-click="adicionarProduto(produto)">Adicionar ao Carrinho</a>-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> <!-- Final Produtos -->
+
+        <footer>
+            <div class="container">
+                <div>
+                    <ul>
+                        <li>
+                            <a href="../index.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="contatos.html">Contatos</a>
+                        </li>
+                        <li>
+                            <a href="#">Sobre Nós</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>            
+        </footer>
+      
+        <!-- Script das Categorias -->
+        <!--<script src="scriptsJs/linha-categorias.js"></script>-->
+
+        <!--Script Para Button Drop-->
+        <script src="../scriptsJs/menu-drop.js"></script>
+
+        <!-- Script da Vitrine -->
+        <script src="../scriptsJs/produtos.js"></script>
+        
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script ipt src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </body>
+</html>

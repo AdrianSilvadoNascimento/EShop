@@ -67,9 +67,9 @@
                 </ul>
             </div>              
             <div id="areaSacola" class="container">
-                <a href="">
+                <a href="view/produto-comprar.html">
                     <i id="sacola" class="fas fa-shopping-bag fa-2x"></i>
-                    <p id="quantidadeSacola" ng-init="sacolaProdutos = produto.quantidade" ng-bind="sacolaProdutos"></p>
+                    <p> {{sacolaProduto}} </p>
                 </a>
                     
             </div>
@@ -174,10 +174,10 @@
                                             <p>Qtd.{{produto.estoque}}</p>
                                         </div>
                                         <div class="col-md-6">
-                                            <h3>{{produto.preco}}</h3>
+                                            <h3>{{produto.preco | currency : "R$"}}</h3>
                                         </div>
                                     </div>
-                                    <button key="{{produto.id}}" class="btn btnBlusas btnAdd" ng-click="adicionarQuantidade(produto)">Adicionar ao Carrinho</button><!--adicionarQuantidade = adicionarQuantidade + 1 -->
+                                    <button key="{{produto.id}}" class="btn btnBlusas btnAdd" ng-click="adicionarProduto(produto)">Adicionar ao Carrinho</button>
                                     <!--<span ng-bind="adicionarQuantidade"></span>-->
                                 </div>
                             </div>
