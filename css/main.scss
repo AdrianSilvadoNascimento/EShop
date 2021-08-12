@@ -47,22 +47,28 @@ header{
         outline: white;
     }*/
     ul#menuSmall{
-        position: relative;
-        top: 3px;
+        position: absolute;
+        top: 40px;
+        left: 1px;
+        margin-top: 0;
         margin-bottom: 0;
         list-style: none;
         display: none;
-        background:#999;
-        width: 120px;
+        background:#555;
+        border-radius: 5px;
+        width: 130px;
         z-index: 50;
+        animation: surgirLeft .5s ease-in-out;
+        transition: all .5s ease-in-out;
         li{
             text-align: center;
+            //padding: 0 30px 0 0;
         }
         a{
             display: block;
             color: white;
-            padding: 10px 0;
         }
+        padding: 10px 0;
         & a:hover{
             background: #333;
             color: #999;
@@ -131,6 +137,16 @@ header{
     }
     
 }
+.roll-top{
+    position: fixed;
+    bottom: 25px;
+    right: 35px;
+    z-index: 1000;
+    & :hover{
+        text-decoration: none;
+        color: #90e0ef;
+    }
+}
 section#area-categorias{
     background:rgba(100, 100, 100, .7);
     z-index: 1;
@@ -151,10 +167,11 @@ section#area-categorias{
         cursor: pointer;
         text-align: center;
         text-decoration: none;
-        color:rgb(255, 255, 255);
+        color:#fff;
         font-size: 1.2em;
 
         img{
+            object-fit: contain;
             border-radius: 50%;
             transition: 0.2s;
         }
@@ -214,6 +231,173 @@ section#area-produtos{
         border-radius: 5px;
     }
 }
+
+//******************* Área do produto da página da sacola ************************
+section#area-produtos-sacola{
+    background: #222;
+    padding-top: 2vh;
+    padding-bottom: 10vh;
+    #bg-produtos-sacola{
+        padding: 15px 0;
+        margin-bottom: 5vh;
+        display: flex;
+        justify-content: center;
+        border-radius: 5px;
+        border: 1px solid #f1f1f1;
+        background: #fff;
+    }
+    .sacola-produtos{
+        img.sacola-vazia{
+            position: relative;
+            left: 30px;
+            object-fit: cover;
+            width: 320px;
+        }
+        h3.sacola-vazia{
+            font-family: 'Courier New', Courier, monospace;
+            color: #333;
+            text-align: left;
+        }
+    }
+    .card-sacola{
+        margin: 10px 5px;
+        background: #f5f5f5;
+        padding: 10px;
+        width: 250px;
+        box-shadow: 0 2px 10px;
+        
+        img{
+            width: 240px;
+            height: 160px;
+            box-sizing: border-box;
+            transition: 0.2s;
+        }
+        p{
+            color: #888;
+            margin: 10px 0 0 0;
+            font-size: .8em;
+        }
+        h3{
+            position: relative;
+            top: 0;
+            margin-top: 5px;
+            font-size: 1.3em;
+            text-align: center;
+        }
+        span{
+            font-size: .8em;
+        }
+        .excluir-sacola{
+            //border: 1px solid red;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            font-size: 1.3em;
+            font-weight: bold;
+            position: relative;
+            top: -240px;
+            left: 200px;
+            cursor: pointer;
+            background: #f5f5f5;
+            border-bottom-left-radius: 25px;
+            a{
+                color: #333;
+            }
+            & a:hover{
+                color: red;
+                text-decoration: none;
+            }
+        }
+        button{
+            position: relative;
+            top: 10px;
+            //border-radius: 5px;
+            margin: 15px 0 0 0;
+            color: white;
+            background: rgba(0, 0, 0, .5);
+        }
+        input.quantidade-sacola, a.quantidade-sacola{
+            position: relative;
+            top: 20px;
+        }
+    }
+}
+//******************* Área do produto da página da sacola ************************
+
+//******************* Área do Botão hamburger ************************
+.menu-btn{
+    position: relative;
+    top: 35px;
+    left: 15px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+    //border: 3px solid #fff;
+}
+.menu-btn_burger{
+    width: 40px;
+    height: 6px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(255,101,47, .2);
+    transition: all .5s ease-in-out;
+
+    &::before,
+    &::after{
+        content: '';
+        position: absolute;
+        width: 40px;
+        height: 6px;
+        background: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(255,101,47, .2);
+        transition: all .5s ease-in-out;
+    }
+    &::before{
+        transform: translateY(-16px);
+    }
+    &::after{
+        transform: translateY(16px);
+    }
+}
+/* Animation */
+.menu-btn.open .menu-btn_burger{
+    transform: translateX(-50px);
+    background: transparent;
+    box-shadow: none;
+    &::before{
+        transform: rotate(45deg) translate(35px, -35px);
+    }
+    &::after{
+        transform: rotate(-45deg) translate(35px, 35px);
+    }
+}
+
+//******************* Área do Botão hamburger ************************
+
+
+//******************* Área do valor total do produto da página da sacola ************************
+.total-compra{
+    background: white;
+    border-radius: 5px;
+    ul{
+        list-style: none;
+    }
+    h3{
+        padding-top: 15px;
+        text-align: center;
+    }
+    h4{
+        text-align: center;
+        padding: 5px;
+    }
+}
+//******************* Área do valor total do produto da página da sacola ************************
+
 .card{
     margin: 10px 5px;
     background: #f5f5f5;
@@ -223,13 +407,11 @@ section#area-produtos{
     box-shadow: 0 2px 10px;
     
     img{
+        object-fit: cover;
         width: 240px;
         height: 160px;
         box-sizing: border-box;
         transition: 0.2s;
-    }
-    & img:hover {
-        box-shadow: 0 2px 4px;
     }
     p{
         color: #888;
@@ -238,16 +420,16 @@ section#area-produtos{
     }
     h3{
         position: relative;
-        top: 0;
-        left: 20px;
-        margin-top: 5px;
+        top: 10px;
+        text-align: center;
         font-size: 1.3em;
     }
     span{
         font-size: .8em;
     }
     button{
-        border-radius: 5px;
+        width: auto;
+        //border-radius: 5px;
         margin: 15px 0 0 0;
         color: white;
         background: rgba(0, 0, 0, .5);
@@ -298,12 +480,9 @@ section#area-contatos{
     background: #222;
     margin: 0 auto;
 
-    .anim{
-        animation: surgirLeft 1s ease-in;
-    }
-    /*.sumir{
+    .sumir{
         animation: sumirBaixo 1s;
-    }*/
+    }
 
     h2{
         padding-top: 10vh;
@@ -375,6 +554,7 @@ section#mensagemFeedback{
 
     }
 }
+
 @keyframes surgirLeft{
     from{
         transform: translateX(-100vw);
@@ -383,7 +563,7 @@ section#mensagemFeedback{
     }
     to{
         opacity: 1;
-        transform: translateX(0);
+        transform: translateX(10px);
         filter: blur(0);
 
     }
@@ -403,9 +583,6 @@ section#mensagemFeedback{
     #logo{
         justify-content: center;
     }
-    #menuDrop{
-        display: block;
-    }
     .card{
         width: 200px;
         img{
@@ -413,6 +590,13 @@ section#mensagemFeedback{
             //height: 190px;
         }
     }
+    #areaSacola{
+        margin-right: -5px !important;
+    }
+    .menu-btn{
+        margin-left: -0px !important;
+    }
+
 
     //----------pagina contato-----------------
     
@@ -429,26 +613,29 @@ section#mensagemFeedback{
         li{
             margin-top: 25px;
         }
-        #menuDrop{
-            display: block;
-        }
         #areaSacola{
             width: 80px;
             height: 80px;
             top: -16px;
-            margin-right: 0;
-            left: 0.5vw;
+            margin-right: 0 !important;
+            left: 15px !important;
             justify-content: center;
             
         }
     }
+    .menu-btn{
+        display: flex;
+        margin-left: 15px;
+    }
+    .menu-btn.open #menuSmall{
+        transition: all .5s ease-in-out;
+        display: block;
+    }
 
     .card{
         h3{
-            top: -20px;
-            margin-top: 0;
-            left: 0;
-            text-align: end;
+            top: 10px;
+            text-align: center;
         }
     }
     section#area-contatos{

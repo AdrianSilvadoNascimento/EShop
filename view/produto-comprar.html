@@ -45,15 +45,14 @@
                 </li>
             </ul>
             <!--Menu em Mobile-->
-            <div class="menu">
-                <input type="button" id="menuDrop" onclick="abrirMenuDrop()"> <!--onclick="fecharMenuDrop()" onmouseout="sairMenuDrop()"-->
-                    <!--<i class="fas fa-bars fa-2x" aria-hidden="true"></i>-->
+            <div class="menu-btn">
+                <div class="menu-btn_burger"></div>
                 <ul id="menuSmall">
                     <li>
                         <a href="../index.html">Home</a>
                     </li>
                     <li>
-                        <a href="contatos.html">Contatos</a>
+                        <a href="view/contatos.html">Contatos</a>
                     </li>
                     <li>
                         <a href="#">Sobre Nós</a>
@@ -65,7 +64,8 @@
                         <a href="">Cadastrar</a>
                     </li>
                 </ul>
-            </div>              
+            </div>
+            <!--Menu em Mobile-->             
             <div id="areaSacola" class="container">
                 <a href="">
                     <i id="sacola" class="fas fa-shopping-bag fa-2x"></i>
@@ -85,9 +85,9 @@
             </form>
         </header> <!-- Final Cabecalho-->
 
-        <section id="area-produtos"> <!-- Começo Produtos -->
+        <section id="area-produtos-sacola"> <!-- Começo Produtos -->
             <div class="row container-fluid m-auto">
-                <div class="col-md-3 d-none d-md-block">
+                <!--<div class="col-md-3 d-none d-md-block">
                     <ul>
                         <li>
                             <a href="">Camisas</a>
@@ -99,27 +99,62 @@
                             <a href="">Produtos Diversos</a>
                         </li>
                     </ul>
-                </div>
+                </div>-->
                 <div class="col-md-9">
-                    <div class="produtos">
-                        <!--<h3 class="vitrineTag">Vitrine</h3>-->
-                        <div id="bg-produtos-blusas" class="row">
-                            <div ng-repeat="produtoAComprar in produtosAComprar | orderBy: order | filter: search">
-                                <div class="card" id="{{produtoAComprar.categoria}}">
+                    <div class="produtos sacola-produtos">
+                        <div id="bg-produtos-sacola" class="row">
+                            <div ng-if="produtosAComprar == 0">
+                                <h3 class="sacola-vazia">A sua sacola está vazia</h3>
+                                <img src="../images/sacola-vazia.jpg" class="img-fluid sacola-vazia" alt="The bag is empty" />
+                            </div>
+                            <div ng-repeat="produtoAComprar in produtosAComprar | orderBy: order | filter: search track by $index">
+                                <div class="card-sacola" id="{{produtoAComprar.categoria}}">
                                     <img ng-src="{{produtoAComprar.img}}" class="img-fluid" alt="{{produtoAComprar.nome}}">
                                     <div class="row">
-                                        <div class="col-md-6">
+                                        <!--<div class="col-md-6">
                                             <p>Qtd.{{produtoAComprar.estoque}}</p>
-                                        </div>
-                                        <div class="col-md-6">
+                                        </div>-->
+                                        <div class="col-md-12">
                                             <h3>{{produtoAComprar.preco | currency : "R$"}}</h3>
                                         </div>
+                                        <div class="col-md-3">
+                                            <a href="" class="btn btn-dark quantidade-sacola" ng-click="alterarQuantidade(produtoAComprar)">-</a>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="number" class="form-control quantidade-sacola" name="quantidade" 
+                                            ng-model="produtoAComprar.quantidade" readonly />
+                                        </div>
+                                        <div class="col-md-3">
+                                            <a href="" class="btn btn-dark quantidade-sacola" ng-click="alterarQuantidade(produtoAComprar)">+</a>
+                                        </div>
                                     </div>
-                                    <div style="color: red; cursor:pointer;" ng-click="removerItem(produtoAComprar)">REMOVER PRODUTO</div>
-                                    <!--<a href="produto-comprar.html" key="{{produto.id}}" class="btn btnBlusas btnAdd" ng-click="adicionarProduto(produto)">Adicionar ao Carrinho</a>-->
+                                    <div class="excluir-sacola">
+                                        <a href="produto-comprar.html" ng-click="removerItem(produtoAComprar)">X</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="total-compra">
+                        <h3 class="text-center">Resumo</h3>
+                        <!--<h4>{{controller.Total}}</h4>-->
+                        <table class="table  table-hover">
+                            <tbody ng-init="total = 0">
+                                <tr ng-repeat="produtoAComprar in produtosAComprar">
+                                    <td><p class="text-center">{{produtoAComprar.nome}}</p></td>
+                                    <td><p class="text-center">{{produtoAComprar.quantidade}}</p></td>
+                                    <td ng-init="$parent.total = $parent.total + (produtoAComprar.preco * produtoAComprar.quantidade)"><p class="text-center">R${{produtoAComprar.preco * produtoAComprar.quantidade}}</p></td>
+                                    <!--<td class="text-center pb-2">{{produtoAComprar.preco | currency : "R$"}}</td>-->
+                                </tr>
+                                <tr>
+                                    <td><h3>Total</h3></td>
+                                    <td></td>
+                                    <td><h3>R${{total}}</h3></td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
@@ -147,7 +182,7 @@
         <!--<script src="scriptsJs/linha-categorias.js"></script>-->
 
         <!--Script Para Button Drop-->
-        <script src="../scriptsJs/menu-drop.js"></script>
+        <script src="../scriptsJs/menu-burger.js"></script>
 
         <!-- Script da Vitrine -->
         <script src="../scriptsJs/produtos.js"></script>

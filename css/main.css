@@ -59,14 +59,22 @@ header #menuDrop {
 }
 
 header ul#menuSmall {
-  position: relative;
-  top: 3px;
+  position: absolute;
+  top: 40px;
+  left: 1px;
+  margin-top: 0;
   margin-bottom: 0;
   list-style: none;
   display: none;
-  background: #999;
-  width: 120px;
+  background: #555;
+  border-radius: 5px;
+  width: 130px;
   z-index: 50;
+  -webkit-animation: surgirLeft .5s ease-in-out;
+          animation: surgirLeft .5s ease-in-out;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+  padding: 10px 0;
 }
 
 header ul#menuSmall li {
@@ -76,7 +84,6 @@ header ul#menuSmall li {
 header ul#menuSmall a {
   display: block;
   color: white;
-  padding: 10px 0;
 }
 
 header ul#menuSmall a:hover {
@@ -160,6 +167,18 @@ header #areaSacola p {
   cursor: pointer;
 }
 
+.roll-top {
+  position: fixed;
+  bottom: 25px;
+  right: 35px;
+  z-index: 1000;
+}
+
+.roll-top :hover {
+  text-decoration: none;
+  color: #90e0ef;
+}
+
 section#area-categorias {
   background: rgba(100, 100, 100, 0.7);
   z-index: 1;
@@ -194,11 +213,13 @@ section#area-categorias .categorias {
   cursor: pointer;
   text-align: center;
   text-decoration: none;
-  color: white;
+  color: #fff;
   font-size: 1.2em;
 }
 
 section#area-categorias .categorias img {
+  -o-object-fit: contain;
+     object-fit: contain;
   border-radius: 50%;
   -webkit-transition: 0.2s;
   transition: 0.2s;
@@ -274,6 +295,202 @@ section#area-produtos a:hover {
   border-radius: 5px;
 }
 
+section#area-produtos-sacola {
+  background: #222;
+  padding-top: 2vh;
+  padding-bottom: 10vh;
+}
+
+section#area-produtos-sacola #bg-produtos-sacola {
+  padding: 15px 0;
+  margin-bottom: 5vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 5px;
+  border: 1px solid #f1f1f1;
+  background: #fff;
+}
+
+section#area-produtos-sacola .sacola-produtos img.sacola-vazia {
+  position: relative;
+  left: 30px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 320px;
+}
+
+section#area-produtos-sacola .sacola-produtos h3.sacola-vazia {
+  font-family: 'Courier New', Courier, monospace;
+  color: #333;
+  text-align: left;
+}
+
+section#area-produtos-sacola .card-sacola {
+  margin: 10px 5px;
+  background: #f5f5f5;
+  padding: 10px;
+  width: 250px;
+  -webkit-box-shadow: 0 2px 10px;
+          box-shadow: 0 2px 10px;
+}
+
+section#area-produtos-sacola .card-sacola img {
+  width: 240px;
+  height: 160px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+section#area-produtos-sacola .card-sacola p {
+  color: #888;
+  margin: 10px 0 0 0;
+  font-size: .8em;
+}
+
+section#area-produtos-sacola .card-sacola h3 {
+  position: relative;
+  top: 0;
+  margin-top: 5px;
+  font-size: 1.3em;
+  text-align: center;
+}
+
+section#area-produtos-sacola .card-sacola span {
+  font-size: .8em;
+}
+
+section#area-produtos-sacola .card-sacola .excluir-sacola {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  font-size: 1.3em;
+  font-weight: bold;
+  position: relative;
+  top: -240px;
+  left: 200px;
+  cursor: pointer;
+  background: #f5f5f5;
+  border-bottom-left-radius: 25px;
+}
+
+section#area-produtos-sacola .card-sacola .excluir-sacola a {
+  color: #333;
+}
+
+section#area-produtos-sacola .card-sacola .excluir-sacola a:hover {
+  color: red;
+  text-decoration: none;
+}
+
+section#area-produtos-sacola .card-sacola button {
+  position: relative;
+  top: 10px;
+  margin: 15px 0 0 0;
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+section#area-produtos-sacola .card-sacola input.quantidade-sacola, section#area-produtos-sacola .card-sacola a.quantidade-sacola {
+  position: relative;
+  top: 20px;
+}
+
+.menu-btn {
+  position: relative;
+  top: 35px;
+  left: 15px;
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+
+.menu-btn_burger {
+  width: 40px;
+  height: 6px;
+  background: #fff;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
+          box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+
+.menu-btn_burger::before, .menu-btn_burger::after {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 6px;
+  background: #fff;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
+          box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+
+.menu-btn_burger::before {
+  -webkit-transform: translateY(-16px);
+          transform: translateY(-16px);
+}
+
+.menu-btn_burger::after {
+  -webkit-transform: translateY(16px);
+          transform: translateY(16px);
+}
+
+/* Animation */
+.menu-btn.open .menu-btn_burger {
+  -webkit-transform: translateX(-50px);
+          transform: translateX(-50px);
+  background: transparent;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.menu-btn.open .menu-btn_burger::before {
+  -webkit-transform: rotate(45deg) translate(35px, -35px);
+          transform: rotate(45deg) translate(35px, -35px);
+}
+
+.menu-btn.open .menu-btn_burger::after {
+  -webkit-transform: rotate(-45deg) translate(35px, 35px);
+          transform: rotate(-45deg) translate(35px, 35px);
+}
+
+.total-compra {
+  background: white;
+  border-radius: 5px;
+}
+
+.total-compra ul {
+  list-style: none;
+}
+
+.total-compra h3 {
+  padding-top: 15px;
+  text-align: center;
+}
+
+.total-compra h4 {
+  text-align: center;
+  padding: 5px;
+}
+
 .card {
   margin: 10px 5px;
   background: #f5f5f5;
@@ -285,17 +502,14 @@ section#area-produtos a:hover {
 }
 
 .card img {
+  -o-object-fit: cover;
+     object-fit: cover;
   width: 240px;
   height: 160px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   -webkit-transition: 0.2s;
   transition: 0.2s;
-}
-
-.card img:hover {
-  -webkit-box-shadow: 0 2px 4px;
-          box-shadow: 0 2px 4px;
 }
 
 .card p {
@@ -306,9 +520,8 @@ section#area-produtos a:hover {
 
 .card h3 {
   position: relative;
-  top: 0;
-  left: 20px;
-  margin-top: 5px;
+  top: 10px;
+  text-align: center;
   font-size: 1.3em;
 }
 
@@ -317,7 +530,7 @@ section#area-produtos a:hover {
 }
 
 .card button {
-  border-radius: 5px;
+  width: auto;
   margin: 15px 0 0 0;
   color: white;
   background: rgba(0, 0, 0, 0.5);
@@ -373,14 +586,11 @@ section#area-contatos {
   height: 80vh;
   background: #222;
   margin: 0 auto;
-  /*.sumir{
-        animation: sumirBaixo 1s;
-    }*/
 }
 
-section#area-contatos .anim {
-  -webkit-animation: surgirLeft 1s ease-in;
-          animation: surgirLeft 1s ease-in;
+section#area-contatos .sumir {
+  -webkit-animation: sumirBaixo 1s;
+          animation: sumirBaixo 1s;
 }
 
 section#area-contatos h2 {
@@ -491,8 +701,8 @@ section#mensagemFeedback p {
   }
   to {
     opacity: 1;
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
+    -webkit-transform: translateX(10px);
+            transform: translateX(10px);
     -webkit-filter: blur(0);
             filter: blur(0);
   }
@@ -508,8 +718,8 @@ section#mensagemFeedback p {
   }
   to {
     opacity: 1;
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
+    -webkit-transform: translateX(10px);
+            transform: translateX(10px);
     -webkit-filter: blur(0);
             filter: blur(0);
   }
@@ -543,14 +753,17 @@ section#mensagemFeedback p {
         -ms-flex-pack: center;
             justify-content: center;
   }
-  #menuDrop {
-    display: block;
-  }
   .card {
     width: 200px;
   }
   .card img {
     width: 250px;
+  }
+  #areaSacola {
+    margin-right: -5px !important;
+  }
+  .menu-btn {
+    margin-left: -0px !important;
   }
 }
 
@@ -567,24 +780,30 @@ section#mensagemFeedback p {
   header li {
     margin-top: 25px;
   }
-  header #menuDrop {
-    display: block;
-  }
   header #areaSacola {
     width: 80px;
     height: 80px;
     top: -16px;
-    margin-right: 0;
-    left: 0.5vw;
+    margin-right: 0 !important;
+    left: 15px !important;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
   }
+  .menu-btn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-left: 15px;
+  }
+  .menu-btn.open #menuSmall {
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+    display: block;
+  }
   .card h3 {
-    top: -20px;
-    margin-top: 0;
-    left: 0;
-    text-align: end;
+    top: 10px;
+    text-align: center;
   }
   section#area-contatos input {
     width: 60vw;

@@ -24,7 +24,10 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
     <body ng-controller="lojaVirtualCtrl">
-        <header class="container-fluid"> <!-- Começo Cabecalho -->
+        <div class="roll-top">
+            <a href="#header"><i class="fas fa-chevron-circle-up fa-2x"></i></a>
+        </div>
+        <header class="container-fluid" id="header"> <!-- Começo Cabecalho -->
             <h1 id="logo">{{logo}}</h1>
             <!--Menu Normal-->
             <ul id="menuCommon">
@@ -45,9 +48,8 @@
                 </li>
             </ul>
             <!--Menu em Mobile-->
-            <div class="menu">
-                <input type="button" id="menuDrop" onclick="abrirMenuDrop()"> <!--onclick="fecharMenuDrop()" onmouseout="sairMenuDrop()"-->
-                    <!--<i class="fas fa-bars fa-2x" aria-hidden="true"></i>-->
+            <div class="menu-btn">
+                <div class="menu-btn_burger"></div>
                 <ul id="menuSmall">
                     <li>
                         <a href="#">Home</a>
@@ -65,7 +67,8 @@
                         <a href="">Cadastrar</a>
                     </li>
                 </ul>
-            </div>              
+            </div>
+            <!--Menu em Mobile-->
             <div id="areaSacola" class="container">
                 <a href="view/produto-comprar.html">
                     <i id="sacola" class="fas fa-shopping-bag fa-2x"></i>
@@ -92,29 +95,37 @@
                         <img src="images/camisa-branca.jpg" class="img-fluid" alt="exemplo">
                         <h3>CAMISETAS</h3>
                     </div>-->
-                    <a href="#camisa" class="categorias" ng-click="category = 'camisa'">
+                    <a href="#vitrine-produtos" class="categorias" ng-click="search = 'camisa'">
                         <img src="images/camisa-branca-categorias.png" class="img-fluid" alt="">
                         camisetas
                     </a>                    
-                    <a href="#camisa" class="categorias" ng-click="category = 'camisa'">
+                    <a href="#vitrine-produtos" class="categorias" ng-click="search = 'camisa'">
                         <img src="images/camisa-branca-mulher-categorias.png" class="img-fluid" alt="">
                         camisetas
                     </a>
-                    <a href="#camisa" class="categorias" ng-click="category = 'camisa'">
+                    <a href="#vitrine-produtos" class="categorias" ng-click="search = 'camisa'">
                         <img src="images/camisa-preta-categorias.png" class="img-fluid" alt="">
                         camisetas
                     </a>
-                    <a href="#camisa" class="categorias" ng-click="category = 'camisa'">
+                    <a href="#vitrine-produtos" class="categorias" ng-click="search = 'camisa'">
                         <img src="images/camisa-preta-mulher-categorias.png" class="img-fluid" alt="">
                         camisetas
                     </a>
-                    <a href="#livro" class="categorias" ng-click="category = 'livro'">
+                    <a href="#vitrine-produtos" class="categorias" ng-click="search = 'livro'">
                         <img src="images/livro-categorias.png" class="img-fluid" alt="">
                         livros
                     </a>
-                    <a href="#livro" class="categorias">
-                        <img src="images/livro1-categorias.png" class="img-fluid" ng-click="category = 'livro'" alt="">
+                    <a href="#vitrine-produtos" class="categorias">
+                        <img src="images/livro1-categorias.png" class="img-fluid" ng-click="search = 'livro'" alt="">
                         livros
+                    </a>
+                    <a href="#vitrine-produtos" class="categorias">
+                        <img src="images/cup-tea-categoria.png" class="img-fluid" ng-click="search = 'produtos'" alt="Cup Tea">
+                        produtos
+                    </a>
+                    <a href="#vitrine-produtos" class="categorias">
+                        <img src="images/cup-tea-categoria.png" class="img-fluid" ng-click="search = 'produtos'" alt="Cup Tea">
+                        produtos
                     </a>
                 </div>
             </div>
@@ -147,42 +158,22 @@
                 </a>
             </div> <!--carousel-->
 
-        <section id="area-produtos"> <!-- Começo Produtos -->
-            <div class="row container-fluid m-auto">
-                <div class="col-md-3 d-none d-md-block">
-                    <ul>
-                        <li>
-                            <a href="">Camisas</a>
-                        </li>
-                        <li>
-                            <a href="">Livros</a>
-                        </li>
-                        <li>
-                            <a href="">Produtos Diversos</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-md-9">
-                    <div class="produtos">
-                        <!--<h3 class="vitrineTag">Vitrine</h3>-->
+        <section id="area-produtos"> <!-- Começo produtos-->
+                <div class="col-md-12">
+                    <div class="produtos" id="vitrine-produtos">
                         <div id="bg-produtos-blusas" class="row">
-                            <div ng-repeat="produto in produtosLoja | orderBy: order | filter: search">
+                            <div ng-repeat="produto in produtosLoja | orderBy: categoria | filter: search track by $index">
                                 <div class="card" id="{{produto.categoria}}">
                                     <img ng-src="{{produto.img}}" class="img-fluid" alt="{{produto.nome}}">
                                     <div class="row">
-                                        <div class="col-md-6">
-                                            <p>Qtd.{{produto.estoque}}</p>
-                                        </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-12">
                                             <h3>{{produto.preco | currency : "R$"}}</h3>
                                         </div>
                                     </div>
-                                    <button key="{{produto.id}}" class="btn btnBlusas btnAdd" ng-click="adicionarProduto(produto)">Adicionar ao Carrinho</button>
+                                    <button key="{{produto.id}}" class="btn btn-block btnBlusas btnAdd" ng-click="adicionarProduto(produto)"><span>Adicionar ao Carrinho</span></button>
                                     <!--<span ng-bind="adicionarQuantidade"></span>-->
                                 </div>
                             </div>
-                            
-                             
                         </div>
                     </div>
                 </div>
@@ -191,7 +182,7 @@
 
         <section id="area-cadastrar">
             <div class="container">
-                <h2>Área Admin</h2>
+                <h2 class="text-white">Área Admin</h2>
                 <form name="produtoForm">
                     <input class="form-control" id="idProduto" type="number" name="idProduto" placeholder="idProduto"ng-model="produto.id" ng-required="true">
                     <input class="form-control" id="nomeProduto" type="text" name="nomeProduto" placeholder="nomeProduto" ng-model="produto.nome" ng-required="true">
@@ -231,7 +222,7 @@
         <!--<script src="scriptsJs/linha-categorias.js"></script>-->
 
         <!--Script Para Button Drop-->
-        <script src="scriptsJs/menu-drop.js"></script>
+        <script src="scriptsJs/menu-burger.js"></script>
 
         <!-- Script da Vitrine -->
         <script src="scriptsJs/produtos.js"></script>
