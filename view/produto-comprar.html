@@ -11,7 +11,7 @@
     <script src="../app/angular/angular.js"></script>
     <script src="../app/angular/angular-messages.min.js"></script>
     <script src="../app/app.js"></script>
-    <script src="../app/angular/modules/lojaVirtual.js"></script>
+    <script src="../app/angular/controllers/lojaVirtual.js"></script>
 
     <!-- Estilo SCSS -->
     <link rel="stylesheet" href="../css/main.css">
@@ -75,30 +75,12 @@
             <form class="container">
                 <div class="input-group">
                     <input type="text" class="form-control" id="search" ng-model="search" placeholder="O que está procurando?">
-                    <!--<div class="input-group-append">
-                        <button class="btn">
-                            <i class="fas fa-search"></i>
-                        </button>
-                    </div>-->
                 </div>                
             </form>
         </header> <!-- Final Cabecalho-->
 
         <section id="area-produtos-sacola"> <!-- Começo Produtos -->
             <div class="row container-fluid m-auto">
-                <!--<div class="col-md-3 d-none d-md-block">
-                    <ul>
-                        <li>
-                            <a href="">Camisas</a>
-                        </li>
-                        <li>
-                            <a href="">Livros</a>
-                        </li>
-                        <li>
-                            <a href="">Produtos Diversos</a>
-                        </li>
-                    </ul>
-                </div>-->
                 <div class="col-md-9">
                     <div class="produtos sacola-produtos">
                         <div id="bg-produtos-sacola" class="row">

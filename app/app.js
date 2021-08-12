@@ -1,1 +1,1 @@
-angular.module("lojaVirtual", []);
+angular.module("lojaVirtual", ["ngMessages"]);
