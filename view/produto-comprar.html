@@ -92,21 +92,18 @@
                                 <div class="card-sacola" id="{{produtoAComprar.categoria}}">
                                     <img ng-src="{{produtoAComprar.img}}" class="img-fluid" alt="{{produtoAComprar.nome}}">
                                     <div class="row">
-                                        <!--<div class="col-md-6">
-                                            <p>Qtd.{{produtoAComprar.estoque}}</p>
-                                        </div>-->
                                         <div class="col-md-12">
                                             <h3>{{produtoAComprar.preco | currency : "R$"}}</h3>
                                         </div>
-                                        <div class="col-md-3">
-                                            <a href="" class="btn btn-dark quantidade-sacola" ng-click="alterarQuantidade(produtoAComprar)">-</a>
+                                        <div class="col-lg-3 col-md-3 col-sm-3">
+                                            <a href="" class="btn btn-dark quantidade-sacola" ng-click="diminuirQuantidade(produtoAComprar)">-</a>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-lg-6 col-md-6 col-sm-6">
                                             <input type="number" class="form-control quantidade-sacola" name="quantidade" 
                                             ng-model="produtoAComprar.quantidade" readonly />
                                         </div>
-                                        <div class="col-md-3">
-                                            <a href="" class="btn btn-dark quantidade-sacola" ng-click="alterarQuantidade(produtoAComprar)">+</a>
+                                        <div class="col-lg-3 col-md-3 col-sm-3">
+                                            <a href="" class="btn btn-dark quantidade-sacola" ng-click="aumentarQuantidade(produtoAComprar)">+</a>
                                         </div>
                                     </div>
                                     <div class="excluir-sacola">
