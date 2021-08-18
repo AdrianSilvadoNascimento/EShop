@@ -582,6 +582,13 @@ footer a:hover {
   color: white;
 }
 
+section#area-login img {
+  border-top-left-radius: 120px;
+  border-bottom-right-radius: 120px;
+  -webkit-filter: drop-shadow(3px 10px 5px #888);
+          filter: drop-shadow(3px 10px 5px #888);
+}
+
 section#area-login .login-area {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -596,8 +603,9 @@ section#area-login .login-area {
           transform: translateX(-50%);
   height: 50vh;
   width: 30vw;
-  border: 2px solid #c5c5c5;
-  border-radius: 10px;
+  border: 1px solid #c5c5c5;
+  border-top-right-radius: 40px;
+  border-bottom-left-radius: 40px;
 }
 
 section#area-login .login-area label.user-header {

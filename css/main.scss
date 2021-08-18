@@ -475,6 +475,11 @@ footer{
 }
 //--------------------------   Login   -------------------------------------
 section#area-login{
+    img{
+        border-top-left-radius: 120px;
+        border-bottom-right-radius: 120px;
+        filter: drop-shadow(3px 10px 5px #888);
+    }
     .login-area{
         display: flex;
         justify-content: center;
@@ -484,8 +489,9 @@ section#area-login{
         transform: translateX(-50%);
         height: 50vh;
         width: 30vw;
-        border: 2px solid #c5c5c5;
-        border-radius: 10px;
+        border: 1px solid #c5c5c5;
+        border-top-right-radius: 40px;
+        border-bottom-left-radius: 40px;
         label.user-header{
             position: relative;
             top: 10vh;
