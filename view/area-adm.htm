@@ -1,0 +1,18 @@
+<div class="container">
+    <h2 class="text-white">Área Admin</h2>
+    <form name="produtoForm">
+        <input class="form-control" id="idProduto" type="number" name="idProduto" placeholder="idProduto"ng-model="produto.id" ng-required="true">
+        <input class="form-control" id="nomeProduto" type="text" name="nomeProduto" placeholder="nomeProduto" ng-model="produto.nome" ng-required="true">
+        <input class="form-control" id="caminhoFotoProduto" type="text" name="caminhoFoto" placeholder="caminhoFoto" ng-model="produto.img" ng-required="true">
+        <input class="form-control" id="quantidadeProduto" type="number" name="quantidade" placeholder="quantidade" ng-model="produto.quantidade" ng-required="true">
+        <!--<input class="form-control" id="categoriaProduto" type="text" name="categoria" placeholder="categoria" required ng-model="produto.categoria">-->
+        <input class="form-control" id="precoProduto" type="text" name="preco" placeholder="preco" ng-model="produto.preco" ng-required="true">
+        <input class="form-control" id="estoqueProduto" type="number" name="estoque" placeholder="estoque" ng-model="produto.estoque" ng-required="true">
+        <select class="form-control" id="tipoProduto" ng-model="produto.tipo" ng-options="categoria.nome for categoria in categorias" ng-required="true">
+            <option value="">Selecione o Tipo do Produto</option>
+            
+        </select>
+    </form>      
+    <button class="btn btn-dark" ng-click="adicionarNaLista(produto)" ng-disabled="produtoForm.$invalid">Cadastrar</button> <!--onclick="cadastrarProduto()"-->
+    <h2></h2>
+</div>
