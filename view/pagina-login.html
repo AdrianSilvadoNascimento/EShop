@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="pt-BR" ng-app="lojaVirtual">
+<head>
+    <title>Loja Virtual</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!--AngularJS-->
+    <script src="../app/angular/angular.js"></script>
+    <script src="../app/angular/angular-messages.min.js"></script>
+    <script src="../app/app.js"></script>
+    <script src="../app/angular/controllers/lojaVirtual.js"></script>
+
+    <!-- Estilo SCSS -->
+    <link rel="stylesheet" href="../css/main.css">
+
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+    <body ng-controller="lojaVirtualCtrl">
+        <div class="roll-top">
+            <a href="#header"><i class="fas fa-chevron-circle-up fa-2x"></i></a>
+        </div>
+        <header class="container-fluid mb-5" id="header"> <!-- Começo Cabecalho -->
+            <h1 id="logo">{{logo}}</h1>
+            <!--Menu Normal-->
+            <ul id="menuCommon">
+                <li>
+                    <a href="../index.html">Home</a>
+                </li>
+                <li>
+                    <a href="contatos.html">Contatos</a>
+                </li>
+                <li>
+                    <a href="#">Sobre Nós</a>
+                </li>
+                <li>                
+                    <a href="">login</a>
+                </li>
+                <li>
+                    <a href="#" class="sublinhado">Cadastre-se</a>
+                </li>
+            </ul>
+            <!--Menu em Mobile-->
+            <div class="menu-btn">
+                <div class="menu-btn_burger"></div>
+                <ul id="menuSmall">
+                    <li>
+                        <a href="../index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="contatos.html">Contatos</a>
+                    </li>
+                    <li>
+                        <a href="#">Sobre Nós</a>
+                    </li>
+                    <li>
+                        <a href="">Login</a>
+                    </li>
+                    <li>
+                        <a href="">Cadastrar</a>
+                    </li>
+                </ul>
+            </div>
+            <!--Menu em Mobile-->
+            <div id="areaSacola" class="container">
+                <a href="view/produto-comprar.html">
+                    <i id="sacola" class="fas fa-shopping-bag fa-2x"></i>
+                    <p> {{sacolaProduto}} </p>
+                </a>
+            </div>
+            <form class="container">
+                <div class="input-group">
+                    <input type="text" class="form-control" id="search" ng-model="search" placeholder="O que está procurando?">
+                </div>                
+            </form>
+        </header> <!-- Final Cabecalho-->
+        
+        <section class="container-fluid mb-5" id="area-login">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="login-area">
+                        <label for="username" class="user-header">Login</label>
+                        <form novalidate>
+                            <input type="text" id="username" placeholder="Usuário">
+                            <input type="text" placeholder="Senha">
+                        </form>
+                    </div>
+                </div>
+                <div class="align-self-center col-md-6">
+                    <img src="https://source.unsplash.com/random/1200x1200/?shop" class="img-fluid" alt="Imagens de shopping">
+                </div>
+            </div>
+        </section>
+
+        <footer ng-include="'rodape.htm'">
+        </footer>
+      
+        <!-- Script das Categorias -->
+        <!--<script src="scriptsJs/linha-categorias.js"></script>-->
+
+        <!--Script Para Button Drop-->
+        <script src="../scriptsJs/menu-burger.js"></script>
+
+        <!-- Script da Vitrine -->
+        <script src="../scriptsJs/produtos.js"></script>
+        
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script ipt src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </body>
+</html>

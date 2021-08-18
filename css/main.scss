@@ -473,6 +473,47 @@ footer{
         color: white;
     }
 }
+//--------------------------   Login   -------------------------------------
+section#area-login{
+    .login-area{
+        display: flex;
+        justify-content: center;
+        position: relative;
+        top: 10vw;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 50vh;
+        width: 30vw;
+        border: 2px solid #c5c5c5;
+        border-radius: 10px;
+        label.user-header{
+            position: relative;
+            top: 10vh;
+            left: 20px;
+            font-size: 2.5em;
+            font-weight: bolder;
+            color: rgb(181, 88, 181);
+            cursor: pointer;
+        }
+        form{
+            position: relative;
+            top: 20vh;
+            left: -30px;
+            input{
+                margin: 35px 0;
+                display: block;
+                width: 20vw;
+                border: none;
+                border-bottom: 1px solid #888;
+                outline: #fff;
+            }
+        }
+    }
+}
+//--------------------------   Login   -------------------------------------
+
+
+
  //--------------------------   Contatos   -------------------------------------
 
 section#area-contatos{

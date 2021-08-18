@@ -582,6 +582,49 @@ footer a:hover {
   color: white;
 }
 
+section#area-login .login-area {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  top: 10vw;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  height: 50vh;
+  width: 30vw;
+  border: 2px solid #c5c5c5;
+  border-radius: 10px;
+}
+
+section#area-login .login-area label.user-header {
+  position: relative;
+  top: 10vh;
+  left: 20px;
+  font-size: 2.5em;
+  font-weight: bolder;
+  color: #b558b5;
+  cursor: pointer;
+}
+
+section#area-login .login-area form {
+  position: relative;
+  top: 20vh;
+  left: -30px;
+}
+
+section#area-login .login-area form input {
+  margin: 35px 0;
+  display: block;
+  width: 20vw;
+  border: none;
+  border-bottom: 1px solid #888;
+  outline: #fff;
+}
+
 section#area-contatos {
   height: 80vh;
   background: #222;
