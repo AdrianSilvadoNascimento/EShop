@@ -170,9 +170,9 @@
             </div>
         </section> <!-- Final Produtos -->
 
-        <section id="area-cadastrar" ng-include="'view/area-adm.htm'">
+        <section id="area-cadastrar" ng-show="usuario = 0" ng-include="'view/includes/area-adm.htm'">
         </section>
-        <footer ng-include="'view/rodape.htm'">
+        <footer ng-include="'view/includes/rodape.htm'">
         </footer>
       
         <!-- Script das Categorias -->

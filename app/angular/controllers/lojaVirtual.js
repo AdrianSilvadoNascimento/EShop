@@ -1,12 +1,18 @@
 angular.module("lojaVirtual").controller("lojaVirtualCtrl", function($scope){
     $scope.logo="Loja Virtual"
 
+    //Iniciando array de usuarios
+    $scope.localStorageUsuario = JSON.parse(localStorage.getItem('usuario'));
+    $scope.usuario = localStorage.getItem('usuario') != null ? $scope.localStorageUsuario : [];
+    //Iniciando array de usuarios
+
+
     $scope.localStorageProdutoAComprar = JSON.parse(localStorage.getItem('produtos-a-comprar'));
     $scope.produtosAComprar = localStorage.getItem('produtos-a-comprar') != null ? $scope.localStorageProdutoAComprar : [];
 
     $scope.updateProdutoAComprar = () => {
         localStorage.setItem('produtos-a-comprar', JSON.stringify($scope.produtosAComprar));
-    }
+    };
 
     $scope.produtosLoja = [
         {id: 0, nome: 'camisasaBranca', img: '../images/camisa-branca.jpg', quantidade: 0, preco: 35, estoque: '38', categoria: 'camisa'},
@@ -20,15 +26,16 @@ angular.module("lojaVirtual").controller("lojaVirtualCtrl", function($scope){
         {id: 8, nome: 'livroRosa', img: '../images/livro2.jpg', quantidade: 0, preco: 30, estoque: '31', categoria:'livro'},
         {id: 9, nome: 'livroAzul', img: '../images/livro1.jpg', quantidade: 0, preco: 30, estoque: '31', categoria:'livro'},
         {id: 10, nome: 'livroRosa', img: '../images/livro2.jpg', quantidade: 0, preco: 30, estoque: '31', categoria:'livro'},
-        {id: 10, nome: 'xicaraCha', img: '../images/cup-tea.jpg', quantidade: 0, preco: 15, estoque: '31', categoria:'livro'},
-        {id: 11, nome: 'xicaraCha', img: '../images/cup-tea.jpg', quantidade: 0, preco: 15, estoque: '31', categoria:'livro'}
+        {id: 11, nome: 'xicaraCha', img: '../images/cup-tea.jpg', quantidade: 0, preco: 15, estoque: '31', categoria:'produtos'},
+        {id: 12, nome: 'xicaraCha', img: '../images/cup-tea.jpg', quantidade: 0, preco: 15, estoque: '31', categoria:'produtos'}
     ];
 
     $scope.sacolaVazia = "Sua Sacola de Produtos está vazia";
 
     $scope.categorias = [
         {nome: 'camisa'},
-        {nome: 'livro'}
+        {nome: 'livro'},
+        {nome: 'produtos'}
     ];
 
     $scope.clientes = [];
@@ -41,7 +48,7 @@ angular.module("lojaVirtual").controller("lojaVirtualCtrl", function($scope){
     };
 
     $scope.adicionarProduto = function(produto){
-        $scope.sacolaProduto = (produto.quantidade++) + 1;
+        $scope.sacolaProduto = ++(produto.quantidade);
         $scope.produtosAComprar.push(angular.copy(produto));
         $scope.updateProdutoAComprar();
         console.log("Você adicionou um produto " + $scope.sacolaProduto);
