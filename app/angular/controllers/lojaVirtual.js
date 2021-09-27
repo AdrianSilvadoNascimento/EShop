@@ -58,6 +58,7 @@ angular.module("lojaVirtual").controller("lojaVirtualCtrl", function($scope){
         var produtoRemovido = $scope.produtosAComprar.indexOf(produtoAComprar);
         $scope.produtosAComprar.splice(produtoRemovido, 1);
         $scope.updateProdutoAComprar();
+        document.location.reload(true);
     };
 
     $scope.adicionarCliente = function(cliente){

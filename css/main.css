@@ -23,16 +23,10 @@ header {
     }*/
 }
 
-header #logo {
-  width: 200px;
+header a img#imgHeader {
+  width: 250px;
   position: relative;
-  top: 35px;
-  font-size: 2em;
-  color: white;
-  font-style: italic;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  top: 16px;
 }
 
 header #search {
@@ -215,6 +209,7 @@ section#area-categorias .categorias {
   text-decoration: none;
   color: #fff;
   font-size: 1.2em;
+  z-index: 1000;
 }
 
 section#area-categorias .categorias img {
@@ -819,11 +814,13 @@ section#mensagemFeedback p {
 }
 
 @media screen and (max-width: 767px) {
-  header #logo {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    width: 100%;
+  header a img#imgHeader {
+    position: relative;
+    left: 50%;
+    top: 40px;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    width: 300px;
   }
   header ul#menuCommon {
     display: none;

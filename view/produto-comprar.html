@@ -6,6 +6,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="../images/icon.png">
 
     <!--AngularJS-->
     <script src="../app/angular/angular.js"></script>
@@ -24,7 +25,9 @@
 </head>
     <body ng-controller="lojaVirtualCtrl">
         <header class="container-fluid"> <!-- Começo Cabecalho -->
-            <h1 id="logo">{{logo}}</h1>
+            <a href="../index.html">
+                <img src="../images/header.png" id="imgHeader" class="img-fluid" alt="Header Eshop">
+            </a>
             <!--Menu Normal-->
             <ul id="menuCommon">
                 <li>
@@ -107,7 +110,7 @@
                                         </div>
                                     </div>
                                     <div class="excluir-sacola">
-                                        <a href="produto-comprar.html" ng-click="removerItem(produtoAComprar)">X</a>
+                                        <a href="" ng-click="removerItem(produtoAComprar)">X</a>
                                     </div>
                                 </div>
                             </div>

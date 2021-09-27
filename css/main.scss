@@ -14,14 +14,10 @@ body{
 }
 header{
     background: #222;
-    #logo{
-        width: 200px;
+    a img#imgHeader{
+        width: 250px;
         position: relative;
-        top: 35px;
-        font-size: 2em;
-        color: white;
-        font-style: italic;
-        display: flex;
+        top: 16px;
     }
     #search{
         border-radius: 0;
@@ -651,9 +647,12 @@ section#mensagemFeedback{
 }
 @media screen and (max-width:767px){
     header{
-        #logo{
-            justify-content: center;
-            width: 100%;
+        a img#imgHeader{
+            position: relative;
+            left: 50%;
+            top: 40px;
+            transform: translateX(-50%);
+            width: 300px;
         }
         ul#menuCommon{
             display: none;
