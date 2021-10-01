@@ -16,6 +16,21 @@ body {
   background: #222;
 }
 
+.bag-drop {
+  width: 300px;
+  background-color: #25b67a;
+  color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+}
+
+.bag-drop .fechar-bag-drop {
+  position: relative;
+  left: 130px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
 header {
   background: #222;
   /*.menu:focus, #menuDrop:focus{

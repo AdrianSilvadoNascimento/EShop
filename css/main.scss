@@ -12,6 +12,19 @@ body{
     width: 100%;
     background: #222;
 }
+.bag-drop{
+    width: 300px;
+    background-color:rgb(37, 182, 122);
+    color:rgba(255, 255, 255, 0.8);
+    text-align: center;
+    .fechar-bag-drop{
+        position: relative;
+        left: 130px;
+        font-weight: bold;
+        color:rgba(0, 0, 0, .5);
+        cursor: pointer;
+    }
+}
 header{
     background: #222;
     a img#imgHeader{
