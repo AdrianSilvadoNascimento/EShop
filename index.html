@@ -27,8 +27,8 @@
         <div class="roll-top">
             <a href="#header"><i class="fas fa-chevron-circle-up fa-2x"></i></a>
         </div>
-        <div class="bag-drop">
-            <div class="fechar-bag-drop">X</div>
+        <div id="bag" class="bag-drop">
+            <div id="fechar-drop" onClick="removeClass()" class="fechar-bag-drop">X</div>
             <h5>Adicionado</h4>
             <p>produto adicionado: "angular recebe produto"</p>
         </div>
@@ -167,7 +167,7 @@
                                             <h3>{{produto.preco | currency : "R$"}}</h3>
                                         </div>
                                     </div>
-                                    <button key="{{produto.id}}" class="btn btn-block btnBlusas btnAdd" ng-click="adicionarProduto(produto)"><span>Adicionar ao Carrinho</span></button>
+                                    <button key="{{produto.id}}" class="btn btn-block btnBlusas btnAdd" id="abrir-drop" onClick="addClass()" ng-click="adicionarProduto(produto)"><span>Adicionar ao Carrinho</span></button>
                                     <!--<span ng-bind="adicionarQuantidade"></span>-->
                                 </div>
                             </div>
@@ -182,14 +182,17 @@
         <footer ng-include="'view/includes/rodape.htm'">
         </footer>
       
-        <!-- Script das Categorias -->
-        <!--<script src="scriptsJs/linha-categorias.js"></script>-->
-
         <!--Script Para Button Drop-->
         <script src="scriptsJs/menu-burger.js"></script>
+        <!--Script Para Button Drop-->
+
+        <!--Script para abrir bag-drop-->
+        <script src="scriptsJs/abrir-bag-drop.js"></script>
+        <!--Script para abrir bag-drop-->
 
         <!-- Script da Vitrine -->
         <script src="scriptsJs/produtos.js"></script>
+        <!-- Script da Vitrine -->
         
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

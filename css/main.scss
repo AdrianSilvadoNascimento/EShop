@@ -12,19 +12,39 @@ body{
     width: 100%;
     background: #222;
 }
+#bag{
+    display: none;
+}
 .bag-drop{
+    position: fixed;
+    top: 100px;
+    right: 16px;
     width: 300px;
+    padding: 10px;
     background-color:rgb(37, 182, 122);
+    border-radius: 5px;
     color:rgba(255, 255, 255, 0.8);
     text-align: center;
-    .fechar-bag-drop{
+    margin-bottom: 10px;
+    animation: surgirRight 0.4s ease-in-out;
+    z-index: 10000;
+    p{
+        text-align: left;
+    }
+    div.fechar-bag-drop{
         position: relative;
+        top: -10px;
         left: 130px;
+        margin-left: 130px;
+        width: 30px;
+        border-bottom-left-radius: 8px;
+        background: #f8f8f8;
         font-weight: bold;
         color:rgba(0, 0, 0, .5);
         cursor: pointer;
     }
 }
+
 header{
     background: #222;
     a img#imgHeader{

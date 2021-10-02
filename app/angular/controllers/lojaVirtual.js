@@ -39,12 +39,13 @@ angular.module("lojaVirtual").controller("lojaVirtualCtrl", function($scope){
         {id: 12, nome: 'xicaraCha', img: '../images/cup-tea.jpg', quantidade: 0, preco: 15, estoque: '31', categoria:'produtos'}
     ];
     //Produtos da loja > objetos
-    
+
     $scope.categorias = [
         {nome: 'camisa'},
         {nome: 'livro'},
         {nome: 'produtos'}
     ];
+
     //Mensagem quando a sacola está vazia
     $scope.sacolaVazia = "Sua Sacola de Produtos está vazia";
     //Mensagem quando a sacola está vazia
@@ -70,7 +71,7 @@ angular.module("lojaVirtual").controller("lojaVirtualCtrl", function($scope){
 
     //Adiciona produto à sacola
     $scope.adicionarProduto = function(produto){
-        $scope.sacolaProduto = ++($scope.sacolaProduto);
+        $scope.sacolaProduto = ++($scope.sacolaProduto.quantidade);
         $scope.produtosAComprar.push(angular.copy(produto));
         $scope.updateProdutoAComprar();
         $scope.updateSacolaProduto();
