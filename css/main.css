@@ -16,10 +16,9 @@ body {
   background: #222;
 }
 
-#bag {
-  display: none;
-}
-
+/*#bag{
+    display: none;
+}*/
 .bag-drop {
   position: fixed;
   top: 100px;
