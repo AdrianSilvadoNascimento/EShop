@@ -125,7 +125,19 @@
                             <tbody ng-init="total = 0">
                                 <tr ng-repeat="produtoAComprar in produtosAComprar">
                                     <td><p class="text-center">{{produtoAComprar.nome}}</p></td>
-                                    <td><p class="text-center">{{produtoAComprar.quantidade}}</p></td>
+                                    <td>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <a href="" class="btn btn-dark quantidade-sacola" ng-click="diminuirQuantidade(produtoAComprar)">-</a>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <p class="text-center">{{produtoAComprar.quantidade}}</p>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <a href="" class="btn btn-dark quantidade-sacola" ng-click="aumentarQuantidade(produtoAComprar)">+</a>
+                                            </div>    
+                                        </div>
+                                    </td>
                                     <td ng-init="$parent.total = $parent.total + (produtoAComprar.preco * produtoAComprar.quantidade)"><p class="text-center">R${{produtoAComprar.preco * produtoAComprar.quantidade}}</p></td>
                                     <!--<td class="text-center pb-2">{{produtoAComprar.preco | currency : "R$"}}</td>-->
                                 </tr>

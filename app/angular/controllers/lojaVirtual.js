@@ -71,7 +71,7 @@ angular.module("lojaVirtual").controller("lojaVirtualCtrl", function($scope){
 
     //Adiciona produto à sacola
     $scope.adicionarProduto = function(produto){
-        $scope.sacolaProduto = ++($scope.sacolaProduto.quantidade);
+        $scope.sacolaProduto = ++(produto.quantidade);
         $scope.produtosAComprar.push(angular.copy(produto));
         $scope.updateProdutoAComprar();
         $scope.updateSacolaProduto();
@@ -88,6 +88,18 @@ angular.module("lojaVirtual").controller("lojaVirtualCtrl", function($scope){
         document.location.reload(true);
     };
     //Remove produto da sacola
+
+    //Aumenta quantidade de peça
+    $scope.aumentarQuantidade = function(produto){
+        $scope.produtoAComprar = $scope.produtoAComprar.quantidade + 1;
+    };
+    //Aumenta quantidade de peça
+    
+    //Diminui quantidade de peça
+    $scope.diminuirQuantidade = function(produto){
+        $scope.produtoAComprar = $scope.produtoAComprar.quantidade - 1;
+    };
+    //Diminui quantidade de peça
     
     //Cadastra usuário
     $scope.adicionarCliente = function(cliente){

@@ -18,20 +18,17 @@ function addClass(){
                 return bag.classList.remove('bag-drop');
             }
         },3000);
-        showHide();
         return bag.classList.add('bag-drop');
     }
 }
 function removeClass(){
     if(hasClass()){
-        showHide();
         return bag.classList.remove('bag-drop');
     }
 }
 function hasClass(){
     return bag.classList.contains('bag-drop');
 }
-showHide();
 abrir.addEventListener('click', addClass);
 fechar.addEventListener('click', removeClass);
 //Chamar bag-drop JS puro
