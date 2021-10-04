@@ -1,28 +1,27 @@
 //Chamar bag-drop JS puro
 var abrir = document.getElementById('abrir-drop'),
     fechar = document.getElementById('fechar-drop'),
+    card = document.getElementById('card-drop'),
     bag = document.getElementById('bag');
 
-function showHide(){
-    if(bag.style.display="none"){
-        bag.style.display="show";
-    }else if(bag.style.display="show"){
-        bag.style.display="none";
-    }
+function contar(){
+    setTimeout(function (){
+        if(hasClass()){
+            card.style.display = 'none';
+            return bag.classList.remove('bag-drop');
+        }
+    },3000);
 }
 function addClass(){
     if(!hasClass()){
-        setTimeout(function (){
-            if(hasClass()){
-                showHide();
-                return bag.classList.remove('bag-drop');
-            }
-        },3000);
+        card.style.display = 'block';
+        contar();
         return bag.classList.add('bag-drop');
     }
 }
 function removeClass(){
     if(hasClass()){
+        card.style.display = 'none';
         return bag.classList.remove('bag-drop');
     }
 }
